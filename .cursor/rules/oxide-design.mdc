@@ -1,0 +1,22 @@
+# Oxide Design Philosophy
+
+## Core Principle
+**Minimalistic, UX-first design with a black and rust theme.**
+
+## Inspiration
+The design language is inspired by **Vercel**, prioritizing clarity, performance, and a modern aesthetic.
+
+## Key Requirements
+- **Retina-Ready:** All assets must be high-resolution. Use SVGs where possible.
+- **Native Feel:** Applications must feel integrated with their host OS. The desktop app should not feel like a simple web wrapper.
+- **Seamless AI Integration:** AI features should feel like a natural extension of the UI, not a tacked-on element. Use subtle glow effects and accents (`rust` color) to denote AI-powered components.
+- **Performance First:** Animations and interactions must be smooth (target 60fps). Avoid layout shifts and prioritize fast load times.
+- **Color Palette:**
+    - **Primary Actions:** Use rust colors (`#cd7f32`, `#b87333`).
+    - **Backgrounds:** Use black variants (`#000000`, `#0a0a0a`, `#111111`).
+    - **Text:** White for primary, gray for secondary information.
+    - **NO GRADIENTS.**
+description:
+globs:
+alwaysApply: true
+---

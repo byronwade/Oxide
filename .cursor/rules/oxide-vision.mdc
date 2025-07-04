@@ -1,0 +1,25 @@
+# Oxide Project Vision & Core Principles
+
+## Vision
+
+Our mission is to create the most developer-friendly and player-focused gaming platform in the world, dethroning incumbent legacy platforms by being faster, more open, fairer, and smarter.
+
+## Core Pillars
+
+Development should align with the four foundational pillars:
+
+1.  **Player Experience & Discovery:** Focus on hyper-personalized, seamless, and instant gaming experiences. Prioritize AI-driven discovery and unified cross-platform access.
+2.  **Creator & Community Ecosystem:** Empower developers with powerful tools, transparent systems, and a thriving modding community.
+3.  **Economic Models & Digital Ownership:** Support dynamic monetization and explore pathways for true digital asset ownership.
+4.  **Technical Excellence:** Uphold uncompromising standards for speed, reliability, and performance.
+
+## Guiding Principles
+
+-   **Faster:** Sub-200ms interactions and optimized content delivery.
+-   **More Open:** Commitment to DRM-optional policies and a powerful, public-facing API.
+-   **Fairer:** A developer-first revenue model (95/5 split) and transparent systems.
+-   **Smarter:** AI-enhanced features at every level of the ecosystem.
+description:
+globs:
+alwaysApply: true
+---

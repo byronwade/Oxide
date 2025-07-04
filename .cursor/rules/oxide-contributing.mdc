@@ -1,0 +1,26 @@
+# Contributing to Oxide
+
+Thank you for your interest in contributing to Oxide! We welcome contributions from the community.
+
+## Code of Conduct
+This project and everyone participating in it is governed by the [Code of Conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+
+## How to Contribute
+
+1.  **Fork the repository** and create your branch from `main`.
+2.  **Run `bun install`** to set up the development environment.
+3.  **Make your changes**, ensuring they align with the project's vision, architecture, and design principles.
+4.  **Add tests** for any new functionality.
+5.  **Ensure the test suite passes** (`bun test`).
+6.  **Format your code** (`bun format`).
+7.  **Submit a pull request** with a clear description of your changes.
+
+## Pull Request Process
+1.  Ensure any install or build dependencies are removed before the end of the layer when doing a build.
+2.  Update the `README.md` with details of changes to the interface, this includes new environment variables, exposed ports, useful file locations and container parameters.
+3.  Increase the version numbers in any `package.json` files and the `README.md` to the new version that this Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
+4.  You may merge the Pull Request in once you have the sign-off of two other developers, or if you do not have permission to do that, you may request the second reviewer to merge it for you.
+description:
+globs:
+alwaysApply: true
+---

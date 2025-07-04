@@ -1,4 +1,4 @@
-use crate::LaunchBeaconError;
+use crate::OxideError;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs as std_fs;
@@ -17,9 +17,10 @@ pub struct ModDescriptor {
 }
 
 /// Install a mod for a specific game
-pub async fn install_mod(game_id: String, mod_path: String) -> Result<String, LaunchBeaconError> {
-    let home_dir = dirs::home_dir().unwrap_or_else(|| PathBuf::from("."));
-    let mods_dir = home_dir.join("LaunchBeacon").join("Mods").join(&game_id);
+pub async fn install_mod(game_id: String, mod_path: String) -> Result<String, OxideError> {
+    let home_dir =
+        home_dir().ok_or_else(|| OxideError::General("Could not find home directory".into()))?;
+    let mods_dir = home_dir.join(".Oxide").join("Mods").join(&game_id);
 
     // Create mods directory if it does not exist
     fs::create_dir_all(&mods_dir).await?;
@@ -27,7 +28,7 @@ pub async fn install_mod(game_id: String, mod_path: String) -> Result<String, La
     // Extract mod (assuming it is a zip file)
     let mod_file = PathBuf::from(&mod_path);
     if !mod_file.exists() {
-        return Err(LaunchBeaconError::ModInstallationFailed(format!(
+        return Err(OxideError::ModInstallationFailed(format!(
             "Mod file not found: {}",
             mod_path
         )));
@@ -69,13 +70,13 @@ pub async fn install_mod(game_id: String, mod_path: String) -> Result<String, La
 
     // Validate mod descriptor
     let descriptor = mod_descriptor.ok_or_else(|| {
-        LaunchBeaconError::ModInstallationFailed("Mod descriptor (mod.json) not found".to_string())
+        OxideError::ModInstallationFailed("Mod descriptor (mod.json) not found".to_string())
     })?;
 
     // Check dependencies
     for dep in &descriptor.dependencies {
         if !is_mod_installed(&game_id, dep).await? {
-            return Err(LaunchBeaconError::ModInstallationFailed(format!(
+            return Err(OxideError::ModInstallationFailed(format!(
                 "Missing dependency: {}",
                 dep
             )));
@@ -94,15 +95,16 @@ pub async fn install_mod(game_id: String, mod_path: String) -> Result<String, La
 }
 
 /// Uninstall a mod
-pub async fn uninstall_mod(game_id: String, mod_id: String) -> Result<String, LaunchBeaconError> {
-    let home_dir = dirs::home_dir().unwrap_or_else(|| PathBuf::from("."));
+pub async fn uninstall_mod(game_id: String, mod_id: String) -> Result<String, OxideError> {
+    let home_dir =
+        home_dir().ok_or_else(|| OxideError::General("Could not find home directory".into()))?;
     let mod_dir = home_dir
-        .join("LaunchBeacon")
+        .join(".Oxide")
         .join("Mods")
         .join(&game_id)
         .join(&mod_id);
     let metadata_path = home_dir
-        .join("LaunchBeacon")
+        .join(".Oxide")
         .join("Mods")
         .join(&game_id)
         .join(format!("{}_metadata.json", mod_id));
@@ -119,9 +121,10 @@ pub async fn uninstall_mod(game_id: String, mod_id: String) -> Result<String, La
 }
 
 /// List all installed mods for a game
-pub async fn list_mods(game_id: String) -> Result<Vec<ModDescriptor>, LaunchBeaconError> {
-    let home_dir = dirs::home_dir().unwrap_or_else(|| PathBuf::from("."));
-    let mods_dir = home_dir.join("LaunchBeacon").join("Mods").join(&game_id);
+pub async fn list_mods(game_id: String) -> Result<Vec<ModDescriptor>, OxideError> {
+    let home_dir =
+        home_dir().ok_or_else(|| OxideError::General("Could not find home directory".into()))?;
+    let mods_dir = home_dir.join(".Oxide").join("Mods").join(&game_id);
 
     if !mods_dir.exists() {
         return Ok(Vec::new());
@@ -147,10 +150,11 @@ pub async fn list_mods(game_id: String) -> Result<Vec<ModDescriptor>, LaunchBeac
 }
 
 /// Check if a mod is installed
-async fn is_mod_installed(game_id: &str, mod_id: &str) -> Result<bool, LaunchBeaconError> {
-    let home_dir = dirs::home_dir().unwrap_or_else(|| PathBuf::from("."));
+async fn is_mod_installed(game_id: &str, mod_id: &str) -> Result<bool, OxideError> {
+    let home_dir =
+        home_dir().ok_or_else(|| OxideError::General("Could not find home directory".into()))?;
     let metadata_path = home_dir
-        .join("LaunchBeacon")
+        .join(".Oxide")
         .join("Mods")
         .join(game_id)
         .join(format!("{}_metadata.json", mod_id));
@@ -161,7 +165,7 @@ async fn is_mod_installed(game_id: &str, mod_id: &str) -> Result<bool, LaunchBea
 /// Load mod configuration for a game
 pub async fn load_mod_config(
     game_id: String,
-) -> Result<HashMap<String, ModDescriptor>, LaunchBeaconError> {
+) -> Result<HashMap<String, ModDescriptor>, OxideError> {
     let mods = list_mods(game_id).await?;
     let mut config = HashMap::new();
 

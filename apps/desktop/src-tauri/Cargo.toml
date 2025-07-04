@@ -1,8 +1,9 @@
 [package]
-name = "launchbeacon-desktop"
+name = "oxide-desktop"
 version = "0.1.0"
-description = "LaunchBeacon Desktop App - Lightning fast game launcher"
-authors = ["LaunchBeacon Team"]
+description = "Oxide Desktop App - Lightning fast game launcher"
+authors = ["The Oxide Team"]
+license = "MIT"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

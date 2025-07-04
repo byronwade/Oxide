@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2.0.0",
-  "productName": "LaunchBeacon",
+  "productName": "Oxide",
   "version": "0.1.0",
-  "identifier": "com.launchbeacon.app",
+  "identifier": "com.oxide.app",
   "build": {
     "beforeDevCommand": "bun run dev",
     "beforeBuildCommand": "bun run build",
@@ -13,7 +13,7 @@
     "macOSPrivateApi": true,
     "windows": [
       {
-        "title": "LaunchBeacon",
+        "title": "Oxide",
         "width": 1200,
         "height": 800,
         "minWidth": 800,
@@ -42,10 +42,10 @@
       "icons/icon.icns",
       "icons/icon.ico"
     ],
-    "publisher": "LaunchBeacon Team",
-    "copyright": "Copyright © 2025 LaunchBeacon",
+    "publisher": "The Oxide Team",
+    "copyright": "Copyright © 2025 Oxide",
     "category": "Game",
-    "shortDescription": "Next-gen game launcher and platform",
+    "shortDescription": "A next-generation gaming platform.",
     "longDescription": "A next-gen platform built to dethrone Steam and itch.io by being faster, more developer-friendly, gamer-focused, and completely open."
   },
   "plugins": {

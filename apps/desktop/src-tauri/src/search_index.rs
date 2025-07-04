@@ -1,4 +1,8 @@
-use crate::LaunchBeaconError;
+use crate::OxideError;
+use crate::{
+    models::{Game, GameIndex},
+    API_BASE_URL,
+};
 use serde_json;
 use std::path::PathBuf;
 use std::sync::OnceLock;
@@ -19,7 +23,7 @@ pub struct GameSearchIndex {
 }
 
 impl GameSearchIndex {
-    pub fn new() -> Result<Self, LaunchBeaconError> {
+    pub fn new() -> Result<Self, OxideError> {
         let mut schema_builder = Schema::builder();
 
         let title_field = schema_builder.add_text_field("title", TEXT | STORED);
@@ -29,12 +33,24 @@ impl GameSearchIndex {
         let schema = schema_builder.build();
 
         // Create index directory
-        let home_dir = dirs::home_dir().unwrap_or_else(|| PathBuf::from("."));
-        let index_dir = home_dir.join("LaunchBeacon").join("index");
-        std::fs::create_dir_all(&index_dir)?;
+        let home_dir = tauri::api::path::home_dir().ok_or_else(|| {
+            OxideError::InitializationError("Could not determine home directory".to_string())
+        })?;
+        let index_dir = home_dir.join(".Oxide").join("index");
 
-        let index = Index::open_in_dir(&index_dir)
-            .unwrap_or_else(|_| Index::create_in_dir(&index_dir, schema.clone()).unwrap());
+        if !index_dir.exists() {
+            std::fs::create_dir_all(&index_dir).map_err(|e| {
+                OxideError::InitializationError(format!("Failed to create index directory: {}", e))
+            })?;
+        }
+
+        let index = Index::open_or_create(
+            tantivy::directory::MmapDirectory::open(&index_dir).map_err(|e| {
+                OxideError::InitializationError(format!("Failed to open index directory: {}", e))
+            })?,
+            schema.clone(),
+        )
+        .map_err(|e| OxideError::InitializationError(format!("Failed to create index: {}", e)))?;
 
         let reader = index
             .reader_builder()
@@ -57,7 +73,7 @@ impl GameSearchIndex {
         title: &str,
         description: &str,
         tags: &[String],
-    ) -> Result<(), LaunchBeaconError> {
+    ) -> Result<(), OxideError> {
         let mut index_writer: IndexWriter = self.index.writer(50_000_000)?;
 
         let mut doc = TantivyDocument::new();
@@ -75,7 +91,7 @@ impl GameSearchIndex {
         &self,
         query_str: &str,
         limit: usize,
-    ) -> Result<Vec<serde_json::Value>, LaunchBeaconError> {
+    ) -> Result<Vec<serde_json::Value>, OxideError> {
         let searcher = self.reader.searcher();
 
         let query_parser = QueryParser::for_index(
@@ -131,7 +147,7 @@ impl GameSearchIndex {
 static SEARCH_INDEX: OnceLock<GameSearchIndex> = OnceLock::new();
 
 /// Initialize the search index
-pub async fn index_games() -> Result<String, LaunchBeaconError> {
+pub async fn index_games() -> Result<String, OxideError> {
     let search_index = GameSearchIndex::new()?;
 
     // Add some sample games for demonstration
@@ -151,16 +167,16 @@ pub async fn index_games() -> Result<String, LaunchBeaconError> {
 
     SEARCH_INDEX
         .set(search_index)
-        .map_err(|_| LaunchBeaconError::InitializationError("Failed to initialize search index".to_string()))?;
+        .map_err(|_| OxideError::InitializationError("Failed to initialize search index".to_string()))?;
 
     Ok("Search index initialized successfully".to_string())
 }
 
 /// Search for games using the index
-pub async fn search_games(query: String) -> Result<Vec<serde_json::Value>, LaunchBeaconError> {
+pub async fn search_games(query: String) -> Result<Vec<serde_json::Value>, OxideError> {
     let search_index = SEARCH_INDEX
         .get()
-        .ok_or_else(|| LaunchBeaconError::SearchIndex("Search index not initialized".to_string()))?;
+        .ok_or_else(|| OxideError::SearchIndex("Search index not initialized".to_string()))?;
 
     search_index.search(&query, 10)
 }

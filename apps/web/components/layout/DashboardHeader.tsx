@@ -46,7 +46,7 @@ export function DashboardHeader({ user }: DashboardHeaderProps) {
 							<div className="w-10 h-10 bg-rust-600 rounded-lg flex items-center justify-center group-hover:bg-rust-700 transition-colors">
 								<GamepadIcon className="w-6 h-6 text-white" />
 							</div>
-							<span className="text-xl font-bold text-white group-hover:text-rust-400 transition-colors">LaunchBeacon</span>
+							<span className="text-xl font-bold text-white group-hover:text-rust-400 transition-colors">Oxide</span>
 						</Link>
 
 						{/* Dashboard Navigation */}

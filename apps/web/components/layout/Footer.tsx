@@ -62,17 +62,17 @@ export function Footer() {
 								<div className="p-1.5 rounded-lg bg-rust-500/10 group-hover:bg-rust-500/20 transition-colors duration-200">
 									<Gamepad className="h-5 w-5 text-rust-500" />
 								</div>
-								<span className="font-semibold text-lg text-white">LaunchBeacon</span>
+								<span className="font-semibold text-lg text-white">Oxide</span>
 							</Link>
 							<p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">The ultimate gaming platform for indie developers and players. Discover, create, and share amazing games.</p>
 							<div className="flex items-center space-x-3">
 								<Button variant="ghost" size="sm" asChild className="p-2 hover:bg-gray-900/50">
-									<Link href="https://twitter.com/launchbeacon" target="_blank" rel="noopener noreferrer">
+									<Link href="https://twitter.com/oxide" target="_blank" rel="noopener noreferrer">
 										<Twitter className="h-4 w-4 text-gray-400 hover:text-white" />
 									</Link>
 								</Button>
 								<Button variant="ghost" size="sm" asChild className="p-2 hover:bg-gray-900/50">
-									<Link href="https://github.com/launchbeacon" target="_blank" rel="noopener noreferrer">
+									<Link href="https://github.com/oxide" target="_blank" rel="noopener noreferrer">
 										<Github className="h-4 w-4 text-gray-400 hover:text-white" />
 									</Link>
 								</Button>
@@ -107,7 +107,7 @@ export function Footer() {
 				<div className="border-t border-gray-900/50 py-6">
 					<div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
 						<div className="flex items-center space-x-6">
-							<p className="text-gray-500 text-sm">© {new Date().getFullYear()} LaunchBeacon Corp.</p>
+							<p className="text-gray-500 text-sm">© {new Date().getFullYear()} Oxide Corp.</p>
 							<div className="flex items-center space-x-4">
 								{legalLinks.map((link) => (
 									<Link key={link.name} href={link.href} className="text-gray-500 hover:text-gray-400 text-sm transition-colors duration-200">

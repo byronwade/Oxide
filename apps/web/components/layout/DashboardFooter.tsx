@@ -32,7 +32,7 @@ export function DashboardFooter() {
 							<div className="w-8 h-8 bg-rust-600 rounded-lg flex items-center justify-center group-hover:bg-rust-700 transition-colors">
 								<GamepadIcon className="w-5 h-5 text-white" />
 							</div>
-							<span className="text-lg font-bold text-white group-hover:text-rust-400 transition-colors">LaunchBeacon</span>
+							<span className="text-lg font-bold text-white group-hover:text-rust-400 transition-colors">Oxide</span>
 						</Link>
 
 						{/* Quick Links */}
@@ -82,7 +82,7 @@ export function DashboardFooter() {
 				{/* Bottom Row */}
 				<div className="flex flex-col sm:flex-row items-center justify-between space-y-2 sm:space-y-0">
 					<div className="flex items-center space-x-2 text-xs text-gray-500">
-						<span>© {currentYear} LaunchBeacon.</span>
+						<span>© {currentYear} Oxide.</span>
 						<span>Built with</span>
 						<Heart className="w-3 h-3 text-rust-400 fill-current" />
 						<span>for developers and gamers.</span>

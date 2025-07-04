@@ -2,7 +2,7 @@
   "name": "web",
   "version": "0.1.0",
   "private": true,
-  "description": "LaunchBeacon Web App - Next.js 15 with App Router",
+  "description": "Oxide Web App - Next.js 15 with App Router",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

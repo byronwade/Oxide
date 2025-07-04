@@ -1,0 +1,31 @@
+# Oxide Technical Architecture & Stack
+
+## High-Level Overview
+Oxide is a monorepo built with **Turborepo** and **Bun**. The architecture is designed for performance, scalability, and code sharing across platforms.
+
+## Tech Stack
+| Category      | Technology                                    | Rationale                                                                |
+| ------------- | --------------------------------------------- | ------------------------------------------------------------------------ |
+| **Monorepo**  | Turborepo, Bun                                | High-performance builds, code sharing, and simplified dependency management. |
+| **Web App**     | Next.js 15, React Server Components, TypeScript | Speed, SEO, modern React features, and type safety.                      |
+| **Desktop App** | Tauri, Rust, Next.js 15                         | Secure, cross-platform, high-performance native shell with a web frontend. |
+| **Mobile App**  | React Native                                  | Cross-platform mobile development with shared logic from the ecosystem.  |
+| **Styling**     | Tailwind CSS, shadcn/ui                       | Utility-first CSS for rapid development and a consistent design system.  |
+| **Backend**     | Rust (native), Node.js (API)                  | Performance and safety (Rust), and a large ecosystem for web services (Node). |
+| **Database**    | PostgreSQL                                    | Robust, scalable, and reliable relational database.                      |
+
+## Monorepo Structure
+-   **`apps/web`**: Main web platform. Refer to `[apps/web/README.md](mdc:apps/web/README.md)` for specifics.
+-   **`apps/desktop`**: Native desktop client. Refer to `[apps/desktop/README.md](mdc:apps/desktop/README.md)` for specifics.
+-   **`apps/mobile`**: Experimental React Native app.
+-   **`packages/ui`**: Shared component library from `[packages/ui](mdc:packages/ui)`.
+-   **`packages/core`**: Shared business logic, types, and utilities from `[packages/core](mdc:packages/core)`.
+
+## Key Architectural Principles
+- **API-First Design:** The platform is built on our own public API. All features should be exposed through this API first.
+- **Server Components by Default:** In the Next.js applications, always default to React Server Components to minimize client-side JavaScript.
+- **Rust for Performance-Critical Tasks:** Leverage Rust in the Tauri backend for anything requiring high performance or system-level access (e.g., file indexing).
+description:
+globs:
+alwaysApply: true
+---
