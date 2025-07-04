@@ -1,0 +1,799 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# LaunchBeacon Mock Data API System
+
+## Core Philosophy
+
+**BUILD LIKE IT'S REAL** - Create a fake data system that perfectly mimics production API behavior. Every data structure, action, and response should be production-ready so transitioning to real backend requires zero frontend changes.
+
+## 🗂️ Data Structure Standards
+
+### File Organization
+```
+data/
+├── games.json              # Complete game catalog
+├── achievements.json       # Achievement definitions
+├── users.json             # User profiles and data  
+├── leaderboards.json      # Global and game leaderboards
+├── reviews.json           # Game reviews and ratings
+├── mods.json              # Mod ecosystem data
+├── analytics.json         # Usage and performance metrics
+├── social.json            # Friends, activity feeds
+├── discover.json          # Discovery and recommendations
+├── notifications.json     # System notifications
+├── settings.json          # Platform settings/config
+└── metadata.json          # API metadata and versioning
+```
+
+### Data File Standards
+```typescript
+// Every data file must follow this structure
+interface DataFile<T> {
+  metadata: {
+    version: string;           // "1.0.0"
+    lastUpdated: string;       // ISO timestamp
+    totalCount: number;        // Total items in dataset
+    apiVersion: "v2";          // API version compatibility
+    cacheExpiry: number;       // Cache TTL in seconds
+  };
+  data: T[];                   // Actual data array
+  pagination?: {
+    page: number;
+    limit: number;
+    hasNext: boolean;
+    hasPrevious: boolean;
+  };
+  relationships?: Record<string, string[]>; // Foreign key relationships
+}
+```
+
+## 🎮 Game Data Structure ([data/games.json](mdc:data/games.json))
+
+```typescript
+interface GameData {
+  metadata: {
+    version: "1.0.0";
+    lastUpdated: "2024-12-29T10:00:00Z";
+    totalCount: 1500;
+    apiVersion: "v2";
+    cacheExpiry: 300; // 5 minutes
+  };
+  data: Game[];
+  relationships: {
+    developers: string[];      // Links to user IDs
+    achievements: string[];    // Links to achievement IDs
+    mods: string[];           // Links to mod IDs
+    reviews: string[];        // Links to review IDs
+  };
+}
+
+interface Game {
+  id: string;                 // "game_001"
+  title: string;              // "Indie Platformer Adventure"
+  slug: string;               // "indie-platformer-adventure"
+  description: string;
+  shortDescription: string;   // For cards/lists
+  developerId: string;        // Links to users.json
+  
+  // Media
+  media: {
+    coverImage: string;       // "/images/games/cover_001.jpg"
+    screenshots: string[];    // Array of image URLs
+    trailerUrl?: string;      // Video trailer URL
+    iconUrl: string;          // Small icon for lists
+  };
+  
+  // Pricing & Availability
+  pricing: {
+    basePrice: number;        // In cents: 1999 = $19.99
+    currentPrice: number;     // Sale price if applicable
+    discountPercent?: number; // 25 = 25% off
+    currency: "USD";
+    isDrmFree: boolean;
+    isEarlyAccess: boolean;
+  };
+  
+  // Game Details
+  details: {
+    releaseDate: string;      // ISO date string
+    lastUpdate: string;       // ISO date string
+    version: string;          // "1.2.3"
+    fileSize: number;         // In bytes
+    platforms: ("windows" | "mac" | "linux")[];
+    systemRequirements: {
+      minimum: SystemReqs;
+      recommended: SystemReqs;
+    };
+    genres: string[];         // ["platformer", "indie", "adventure"]
+    tags: string[];           // User and AI generated tags
+  };
+  
+  // Engagement Metrics
+  metrics: {
+    downloadCount: number;
+    rating: number;           // 0-5 stars
+    reviewCount: number;
+    playTime: {
+      average: number;        // In minutes
+      median: number;
+    };
+    achievementCount: number;
+    modCount: number;
+  };
+  
+  // AI Enhancement
+  aiData: {
+    difficultyScore: number;     // 1-10
+    complexityLevel: "beginner" | "intermediate" | "expert";
+    emotionalTone: string[];     // ["relaxing", "challenging"]
+    targetAudience: string[];    // ["casual", "hardcore"]
+    similarGames: string[];      // Array of game IDs
+    autoTags: string[];          // AI-generated tags
+    contentWarnings: string[];   // Safety ratings
+  };
+  
+  // Social Features
+  social: {
+    developerNotes: string;
+    communityFeatures: boolean;
+    multiplayerSupport: boolean;
+    workshopSupport: boolean;
+    streamingFriendly: boolean;
+  };
+  
+  // Technical
+  technical: {
+    engineUsed?: string;      // "Unity", "Unreal", "Custom"
+    modSupport: boolean;
+    cloudSaveSupport: boolean;
+    achievementSupport: boolean;
+    leaderboardSupport: boolean;
+  };
+  
+  // Timestamps
+  createdAt: string;          // ISO timestamp
+  updatedAt: string;          // ISO timestamp
+}
+```
+
+## 🏆 Achievement Data Structure ([data/achievements.json](mdc:data/achievements.json))
+
+```typescript
+interface AchievementData {
+  metadata: {
+    version: "1.0.0";
+    lastUpdated: "2024-12-29T10:00:00Z";
+    totalCount: 5000;
+    apiVersion: "v2";
+    cacheExpiry: 600; // 10 minutes
+  };
+  data: Achievement[];
+}
+
+interface Achievement {
+  id: string;                    // "ach_001"
+  gameId: string;               // Links to games.json
+  title: string;
+  description: string;
+  
+  // Achievement Properties
+  type: "story" | "challenge" | "collection" | "social" | "hidden";
+  difficulty: "easy" | "medium" | "hard" | "legendary";
+  category: string;             // "combat", "exploration", "completion"
+  
+  // Unlock Requirements
+  requirements: {
+    type: "stat" | "event" | "combination";
+    conditions: Record<string, any>; // Flexible condition system
+    dependencies?: string[];     // Other achievement IDs required
+  };
+  
+  // Rewards & Recognition
+  rewards: {
+    xp: number;
+    title?: string;              // Player title unlock
+    badge?: string;              // Badge image URL
+    socialShareText: string;     // For sharing achievements
+  };
+  
+  // Progress Tracking
+  progress: {
+    isProgressBased: boolean;    // Can show % completion
+    maxProgress?: number;        // For progress-based achievements
+    currentProgress?: number;    // User's current progress
+    milestones?: number[];       // Progress milestones
+  };
+  
+  // AI Enhancement
+  aiData: {
+    personalizedFor?: string;    // User ID for personalized achievements
+    generatedBy: "developer" | "ai" | "community";
+    confidenceScore?: number;    // AI confidence for generated achievements
+    adaptiveDifficulty: boolean; // Adjusts based on player skill
+  };
+  
+  // Social Features
+  social: {
+    isShareable: boolean;
+    celebrationEffects: string[]; // Visual effects on unlock
+    leaderboardImpact: number;   // Points added to leaderboards
+    rarity: number;              // % of players who have this (0-100)
+  };
+  
+  // Metadata
+  isHidden: boolean;            // Hidden until unlocked
+  isRetired: boolean;           // No longer obtainable
+  seasonId?: string;            // For seasonal achievements
+  crossGameCompatible: boolean; // Works across multiple games
+  
+  createdAt: string;
+  updatedAt: string;
+}
+```
+
+## 👤 User Data Structure ([data/users.json](mdc:data/users.json))
+
+```typescript
+interface UserData {
+  metadata: {
+    version: "1.0.0";
+    lastUpdated: "2024-12-29T10:00:00Z";
+    totalCount: 50000;
+    apiVersion: "v2";
+    cacheExpiry: 60; // 1 minute for user data
+  };
+  data: User[];
+}
+
+interface User {
+  id: string;                  // "user_001"
+  username: string;
+  displayName: string;
+  email: string;               // Hashed/encrypted in real system
+  
+  // Profile
+  profile: {
+    avatar: string;            // Avatar image URL
+    bio?: string;
+    location?: string;
+    websiteUrl?: string;
+    socialLinks: {
+      twitter?: string;
+      youtube?: string;
+      twitch?: string;
+    };
+    badges: string[];          // Achievement badges
+    title?: string;            // Current player title
+  };
+  
+  // Gaming Data
+  gaming: {
+    ownedGames: string[];      // Array of game IDs
+    wishlist: string[];        // Wishlisted game IDs
+    recentlyPlayed: {
+      gameId: string;
+      lastPlayed: string;      // ISO timestamp
+      totalPlayTime: number;   // In minutes
+    }[];
+    achievements: {
+      gameId: string;
+      achievementId: string;
+      unlockedAt: string;      // ISO timestamp
+    }[];
+    reviews: string[];         // Review IDs authored
+  };
+  
+  // Social
+  social: {
+    friends: string[];         // User IDs of friends
+    following: string[];       // User IDs being followed
+    followers: string[];       // User IDs of followers
+    privacy: {
+      profileVisibility: "public" | "friends" | "private";
+      gameLibraryVisible: boolean;
+      achievementsVisible: boolean;
+      playtimeVisible: boolean;
+    };
+  };
+  
+  // Preferences (AI Learning)
+  preferences: {
+    favoriteGenres: string[];
+    preferredDifficulty: "easy" | "medium" | "hard" | "mixed";
+    playtimePreference: "short" | "medium" | "long" | "mixed";
+    contentFilters: string[];  // Content to filter out
+    aiRecommendations: boolean; // Allow AI recommendations
+    platformPreferences: string[]; // ["windows", "mac", "linux"]
+  };
+  
+  // Developer Data (if user is developer)
+  developer?: {
+    isVerified: boolean;
+    publishedGames: string[];  // Game IDs published
+    revenue: {
+      total: number;           // Total earnings in cents
+      thisMonth: number;
+    };
+    analytics: {
+      totalDownloads: number;
+      totalReviews: number;
+      averageRating: number;
+    };
+  };
+  
+  // System Data
+  system: {
+    accountType: "player" | "developer" | "admin";
+    memberSince: string;       // ISO timestamp
+    lastSeen: string;          // ISO timestamp
+    isOnline: boolean;
+    currentStatus: "online" | "away" | "busy" | "offline";
+    notificationSettings: Record<string, boolean>;
+  };
+  
+  createdAt: string;
+  updatedAt: string;
+}
+```
+
+## 🚀 Action Pattern Standards
+
+### Server Actions for Web App ([apps/web](mdc:apps/web))
+```typescript
+// lib/actions/games.ts
+'use server'
+
+import { cache } from 'react'
+import { Game, GameFilters, PaginatedResponse } from '@/types'
+
+// Cache with 5-minute TTL matching data file settings
+export const getGames = cache(async (
+  filters?: GameFilters,
+  page: number = 1,
+  limit: number = 20
+): Promise<PaginatedResponse<Game>> => {
+  // Simulate API delay for realistic testing
+  await new Promise(resolve => setTimeout(resolve, 50)) // 50ms delay
+  
+  const gamesData = await import('@/data/games.json')
+  let games = gamesData.data
+  
+  // Apply filters (simulate server-side filtering)
+  if (filters?.genre) {
+    games = games.filter(game => 
+      game.details.genres.includes(filters.genre!)
+    )
+  }
+  
+  if (filters?.priceRange) {
+    games = games.filter(game => 
+      game.pricing.currentPrice >= filters.priceRange![0] &&
+      game.pricing.currentPrice <= filters.priceRange![1]
+    )
+  }
+  
+  if (filters?.search) {
+    const searchTerm = filters.search.toLowerCase()
+    games = games.filter(game =>
+      game.title.toLowerCase().includes(searchTerm) ||
+      game.description.toLowerCase().includes(searchTerm) ||
+      game.details.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+    )
+  }
+  
+  // Pagination
+  const startIndex = (page - 1) * limit
+  const paginatedGames = games.slice(startIndex, startIndex + limit)
+  
+  return {
+    data: paginatedGames,
+    pagination: {
+      page,
+      limit,
+      total: games.length,
+      totalPages: Math.ceil(games.length / limit),
+      hasNext: startIndex + limit < games.length,
+      hasPrevious: page > 1
+    },
+    metadata: {
+      cached: true,
+      timestamp: new Date().toISOString(),
+      source: 'mock-data'
+    }
+  }
+})
+
+export const getGameById = cache(async (id: string): Promise<Game | null> => {
+  await new Promise(resolve => setTimeout(resolve, 25)) // 25ms delay
+  
+  const gamesData = await import('@/data/games.json')
+  return gamesData.data.find(game => game.id === id) || null
+})
+
+export const getFeaturedGames = cache(async (): Promise<Game[]> => {
+  await new Promise(resolve => setTimeout(resolve, 30))
+  
+  const gamesData = await import('@/data/games.json')
+  // Simulate featured algorithm (high rating + recent)
+  return gamesData.data
+    .filter(game => game.metrics.rating >= 4.0)
+    .sort((a, b) => new Date(b.details.lastUpdate).getTime() - new Date(a.details.lastUpdate).getTime())
+    .slice(0, 10)
+})
+```
+
+### Tauri Commands for Desktop App ([apps/desktop](mdc:apps/desktop))
+```rust
+// src-tauri/src/lib/data_service.rs
+use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
+use tauri::AppHandle;
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Game {
+    pub id: String,
+    pub title: String,
+    // ... other fields matching TypeScript interface
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct GameFilters {
+    pub genre: Option<String>,
+    pub price_range: Option<(u32, u32)>,
+    pub search: Option<String>,
+}
+
+#[tauri::command]
+pub async fn get_games(
+    filters: Option<GameFilters>,
+    page: u32,
+    limit: u32,
+) -> Result<PaginatedResponse<Game>, String> {
+    // Simulate network delay for realistic testing
+    tokio::time::sleep(tokio::time::Duration::from_millis(50)).await;
+    
+    let games_json = include_str!("../../../data/games.json");
+    let games_data: GameData = serde_json::from_str(games_json)
+        .map_err(|e| format!("Failed to parse games data: {}", e))?;
+    
+    let mut games = games_data.data;
+    
+    // Apply filters
+    if let Some(filters) = filters {
+        if let Some(genre) = filters.genre {
+            games = games.into_iter()
+                .filter(|game| game.details.genres.contains(&genre))
+                .collect();
+        }
+        
+        if let Some(search) = filters.search {
+            let search_lower = search.to_lowercase();
+            games = games.into_iter()
+                .filter(|game| {
+                    game.title.to_lowercase().contains(&search_lower) ||
+                    game.description.to_lowercase().contains(&search_lower)
+                })
+                .collect();
+        }
+    }
+    
+    // Pagination
+    let start_index = ((page - 1) * limit) as usize;
+    let end_index = (start_index + limit as usize).min(games.len());
+    let paginated_games = games[start_index..end_index].to_vec();
+    
+    Ok(PaginatedResponse {
+        data: paginated_games,
+        pagination: Pagination {
+            page,
+            limit,
+            total: games.len() as u32,
+            total_pages: ((games.len() as f64) / (limit as f64)).ceil() as u32,
+            has_next: end_index < games.len(),
+            has_previous: page > 1,
+        },
+        metadata: ResponseMetadata {
+            cached: true,
+            timestamp: chrono::Utc::now().to_rfc3339(),
+            source: "mock-data".to_string(),
+        },
+    })
+}
+
+#[tauri::command]
+pub async fn get_game_by_id(id: String) -> Result<Option<Game>, String> {
+    tokio::time::sleep(tokio::time::Duration::from_millis(25)).await;
+    
+    let games_json = include_str!("../../../data/games.json");
+    let games_data: GameData = serde_json::from_str(games_json)
+        .map_err(|e| format!("Failed to parse games data: {}", e))?;
+    
+    Ok(games_data.data.into_iter().find(|game| game.id == id))
+}
+```
+
+## ⚡ Performance Optimization Standards
+
+### Speed-First Data Loading
+```typescript
+// lib/data-loader.ts - Optimized data loading utility
+class DataLoader {
+  private static cache = new Map<string, { data: any; expiry: number }>()
+  
+  static async loadData<T>(
+    filename: string,
+    cacheKey: string,
+    ttl: number = 300000 // 5 minutes default
+  ): Promise<T> {
+    // Check cache first (sub-1ms lookup)
+    const cached = this.cache.get(cacheKey)
+    if (cached && Date.now() < cached.expiry) {
+      return cached.data
+    }
+    
+    // Load and parse JSON (optimized for speed)
+    const start = performance.now()
+    const data = await import(`@/data/${filename}`)
+    const loadTime = performance.now() - start
+    
+    // Log slow loads (debug mode)
+    if (loadTime > 10) {
+      console.warn(`Slow data load: ${filename} took ${loadTime}ms`)
+    }
+    
+    // Update cache
+    this.cache.set(cacheKey, {
+      data: data.default,
+      expiry: Date.now() + ttl
+    })
+    
+    return data.default
+  }
+  
+  // Preload critical data on app startup
+  static async preloadCriticalData() {
+    const criticalFiles = [
+      'games.json',
+      'achievements.json', 
+      'users.json'
+    ]
+    
+    await Promise.all(
+      criticalFiles.map(file => 
+        this.loadData(file, file.replace('.json', ''))
+      )
+    )
+  }
+}
+```
+
+### Lazy Loading Patterns
+```typescript
+// hooks/use-games.ts - Optimized data fetching hook
+import { useState, useEffect } from 'react'
+import { getGames } from '@/lib/actions/games'
+
+export function useGames(filters?: GameFilters, autoLoad = true) {
+  const [games, setGames] = useState<Game[]>([])
+  const [loading, setLoading] = useState(autoLoad)
+  const [error, setError] = useState<string | null>(null)
+  
+  const loadGames = async () => {
+    if (!autoLoad && !loading) setLoading(true)
+    
+    try {
+      const start = performance.now()
+      const result = await getGames(filters)
+      const loadTime = performance.now() - start
+      
+      // Ensure we meet sub-100ms target
+      if (loadTime > 100) {
+        console.warn(`Slow game loading: ${loadTime}ms`)
+      }
+      
+      setGames(result.data)
+      setError(null)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load games')
+    } finally {
+      setLoading(false)
+    }
+  }
+  
+  useEffect(() => {
+    if (autoLoad) loadGames()
+  }, [JSON.stringify(filters)]) // Stable dependency
+  
+  return { games, loading, error, refetch: loadGames }
+}
+```
+
+## 🔄 Backend Transition Strategy
+
+### API-Ready Structure
+```typescript
+// types/api.ts - API contract definitions
+export interface APIResponse<T> {
+  data: T
+  pagination?: Pagination
+  metadata: {
+    cached: boolean
+    timestamp: string
+    source: string
+    version: string
+  }
+  error?: {
+    code: string
+    message: string
+    details?: any
+  }
+}
+
+// Future backend URL configuration
+export const API_CONFIG = {
+  baseUrl: process.env.NODE_ENV === 'production' 
+    ? 'https://api.launchbeacon.com/v2'
+    : 'http://localhost:3001/api/v2',
+  useMockData: process.env.USE_MOCK_DATA === 'true',
+  timeout: 5000,
+  retries: 3
+}
+
+// Seamless switching between mock and real API
+export async function apiRequest<T>(
+  endpoint: string,
+  options?: RequestInit
+): Promise<APIResponse<T>> {
+  if (API_CONFIG.useMockData) {
+    // Use mock data system
+    return mockApiRequest<T>(endpoint, options)
+  } else {
+    // Use real API
+    return realApiRequest<T>(endpoint, options)
+  }
+}
+```
+
+### Environment-Based Data Sources
+```typescript
+// lib/data-source.ts
+export class DataSource {
+  static async getGames(filters?: GameFilters): Promise<Game[]> {
+    if (process.env.NODE_ENV === 'development' || process.env.USE_MOCK_DATA) {
+      // Use local JSON files
+      return getMockGames(filters)
+    } else {
+      // Use real API
+      const response = await fetch(`${API_CONFIG.baseUrl}/games`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filters })
+      })
+      const data = await response.json()
+      return data.games
+    }
+  }
+}
+```
+
+## 📊 Data Generation Utilities
+
+### Realistic Data Generation
+```typescript
+// scripts/generate-mock-data.ts
+import { faker } from '@faker-js/faker'
+
+function generateRealisticGame(id: string): Game {
+  const genres = ['action', 'adventure', 'indie', 'platformer', 'puzzle', 'rpg']
+  const platforms = ['windows', 'mac', 'linux']
+  
+  return {
+    id,
+    title: faker.commerce.productName(),
+    slug: faker.helpers.slugify(faker.commerce.productName()),
+    description: faker.commerce.productDescription(),
+    shortDescription: faker.lorem.sentence(),
+    developerId: `user_${faker.number.int({ min: 1, max: 1000 })}`,
+    
+    media: {
+      coverImage: `/images/games/cover_${id}.jpg`,
+      screenshots: Array.from({ length: faker.number.int({ min: 3, max: 8 }) }, 
+        (_, i) => `/images/games/${id}_screenshot_${i + 1}.jpg`
+      ),
+      trailerUrl: faker.datatype.boolean() ? `/videos/trailers/${id}.mp4` : undefined,
+      iconUrl: `/images/games/icon_${id}.png`
+    },
+    
+    pricing: {
+      basePrice: faker.number.int({ min: 0, max: 5999 }), // $0-$59.99
+      currentPrice: faker.number.int({ min: 0, max: 5999 }),
+      currency: 'USD',
+      isDrmFree: faker.datatype.boolean(),
+      isEarlyAccess: faker.datatype.boolean()
+    },
+    
+    details: {
+      releaseDate: faker.date.past({ years: 2 }).toISOString(),
+      lastUpdate: faker.date.recent({ days: 30 }).toISOString(),
+      version: `${faker.number.int({ min: 1, max: 3 })}.${faker.number.int({ min: 0, max: 9 })}.${faker.number.int({ min: 0, max: 9 })}`,
+      fileSize: faker.number.int({ min: 100_000_000, max: 50_000_000_000 }), // 100MB - 50GB
+      platforms: faker.helpers.arrayElements(platforms, { min: 1, max: 3 }),
+      genres: faker.helpers.arrayElements(genres, { min: 1, max: 3 }),
+      tags: faker.helpers.arrayElements([
+        'singleplayer', 'multiplayer', 'coop', 'pvp', 'story-rich',
+        'atmospheric', 'challenging', 'relaxing', 'family-friendly'
+      ], { min: 2, max: 6 })
+    },
+    
+    metrics: {
+      downloadCount: faker.number.int({ min: 100, max: 1_000_000 }),
+      rating: faker.number.float({ min: 1, max: 5, fractionDigits: 1 }),
+      reviewCount: faker.number.int({ min: 10, max: 10_000 }),
+      playTime: {
+        average: faker.number.int({ min: 30, max: 1200 }), // 30min - 20hrs
+        median: faker.number.int({ min: 30, max: 1200 })
+      },
+      achievementCount: faker.number.int({ min: 0, max: 50 }),
+      modCount: faker.number.int({ min: 0, max: 500 })
+    },
+    
+    // ... rest of the fields with realistic fake data
+    
+    createdAt: faker.date.past({ years: 1 }).toISOString(),
+    updatedAt: faker.date.recent({ days: 7 }).toISOString()
+  }
+}
+
+// Generate 1500 realistic games
+export function generateGamesData(): GameData {
+  const games = Array.from({ length: 1500 }, (_, i) => 
+    generateRealisticGame(`game_${String(i + 1).padStart(3, '0')}`)
+  )
+  
+  return {
+    metadata: {
+      version: "1.0.0",
+      lastUpdated: new Date().toISOString(),
+      totalCount: games.length,
+      apiVersion: "v2",
+      cacheExpiry: 300
+    },
+    data: games,
+    relationships: {
+      developers: [...new Set(games.map(g => g.developerId))],
+      achievements: [], // Will be populated by achievements generator
+      mods: [],
+      reviews: []
+    }
+  }
+}
+```
+
+## ✅ Mock Data System Checklist
+
+Before implementing any data file:
+- [ ] **Follows DataFile<T> structure** with metadata
+- [ ] **Realistic data values** using faker.js or similar
+- [ ] **Proper relationships** defined between entities
+- [ ] **Performance optimized** for sub-50ms loading
+- [ ] **Cache-friendly** with appropriate TTL values
+- [ ] **TypeScript interfaces** match exactly
+- [ ] **Action functions** implemented for both web and desktop
+- [ ] **Error handling** for missing/corrupted data
+- [ ] **Easy backend transition** path defined
+- [ ] **Speed benchmarks** meet sub-100ms targets
+
+## 🎯 Speed Benchmarks
+
+### Required Performance Targets
+- **Data loading**: < 50ms for any single file
+- **Search/filtering**: < 25ms for any query
+- **Cache hits**: < 1ms response time  
+- **Initial app load**: < 200ms for critical data
+- **Memory usage**: < 50MB for all cached data
+- **Network simulation**: 50ms artificial delay max
+
+**Remember: Every millisecond counts. We're building the fastest gaming platform ever created - faster than Steam, faster than itch.io, faster than everything.**

@@ -1,0 +1,50 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Development Server Management
+
+## Clean Development Server Startup Protocol
+
+When starting or restarting the development server, ALWAYS follow this sequence:
+
+### 1. Cancel Existing Processes
+- **Kill any running dev processes** before starting new ones
+- Check for and terminate any processes running on port 3000 or other dev ports
+- Use `pkill -f "next dev"` or `lsof -ti:3000 | xargs kill -9` if needed
+
+### 2. Clear Next.js Cache
+- **Always delete the `.next` directory** before starting development
+- This prevents caching issues and ensures clean builds
+- Command: `rm -rf .next`
+
+### 3. Start Fresh Development Server
+- Use the preferred package manager: **Bun** (as specified in user preferences)
+- Command: `bun dev`
+- Verify the server starts cleanly on http://localhost:3000
+
+## Implementation Commands
+
+```bash
+# Complete clean restart sequence
+pkill -f "next dev" 2>/dev/null || true
+rm -rf .next
+bun dev
+```
+
+## When to Apply This Rule
+
+- **Every time** you start a development server
+- When switching between different development tasks
+- After making significant configuration changes to [next.config.ts](mdc:next.config.ts)
+- When encountering unexpected caching or build issues
+- Before running development after editing [package.json](mdc:package.json)
+
+## Additional Considerations
+
+- Also clear `node_modules/.cache` if persistent issues occur
+- Consider clearing browser cache for complete fresh start
+- Monitor for any lingering processes that might interfere with development
+
+This ensures optimal performance and prevents cache-related development issues in the LaunchBeacon project.

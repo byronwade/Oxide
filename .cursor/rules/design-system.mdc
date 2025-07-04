@@ -1,0 +1,287 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# LaunchBeacon Design System
+
+## Core Design Philosophy
+
+**MINIMALISTIC, UX-FIRST DESIGN** with black and rust theme colors, inspired by Vercel's design language. Every interface must be retina-ready and feel native while incorporating AI seamlessly throughout the experience.
+
+## 🎨 Color Palette
+
+### Primary Colors
+```css
+/* Black & Rust Theme */
+--color-background: #000000;
+--color-background-secondary: #0a0a0a;
+--color-background-tertiary: #111111;
+
+/* Rust Accents */
+--color-rust-primary: #cd7f32;
+--color-rust-secondary: #b87333;
+--color-rust-light: #daa520;
+--color-rust-dark: #8b4513;
+
+/* Neutrals */
+--color-white: #ffffff;
+--color-gray-50: #fafafa;
+--color-gray-100: #f5f5f5;
+--color-gray-200: #e5e5e5;
+--color-gray-300: #d4d4d4;
+--color-gray-400: #a3a3a3;
+--color-gray-500: #737373;
+--color-gray-600: #525252;
+--color-gray-700: #404040;
+--color-gray-800: #262626;
+--color-gray-900: #171717;
+```
+
+### AI-Specific Colors
+```css
+/* AI Integration Colors */
+--color-ai-primary: #cd7f32;
+--color-ai-glow: rgba(205, 127, 50, 0.3);
+--color-ai-background: rgba(205, 127, 50, 0.05);
+--color-ai-border: rgba(205, 127, 50, 0.2);
+```
+
+## 📱 App-Specific Guidelines
+
+### Web App ([apps/web](mdc:apps/web))
+- **Clean, modern web interface** following Vercel design patterns
+- **Card-based layouts** with subtle shadows and borders
+- **Responsive grid systems** for game listings
+- **Smooth animations** and micro-interactions
+- **Typography-focused** content presentation
+
+### Desktop App ([apps/desktop](mdc:apps/desktop))
+- **Native desktop feel** with OS-specific adaptations
+- **Sidebar navigation** with collapsible sections
+- **Context menus** and keyboard shortcuts
+- **System-level notifications** and progress indicators
+- **Dark theme optimized** for long gaming sessions
+
+## 🤖 AI Integration Design Patterns
+
+### AI Suggestion Cards
+```tsx
+// Standard AI suggestion component structure
+<div className="ai-suggestion-card">
+  <div className="ai-indicator">
+    <RustSparkleIcon />
+    <span>AI Suggested</span>
+  </div>
+  <div className="suggestion-content">
+    {/* AI-generated content */}
+  </div>
+  <div className="ai-actions">
+    <button className="ai-action-primary">Apply</button>
+    <button className="ai-action-secondary">Dismiss</button>
+  </div>
+</div>
+```
+
+### AI Chat Components
+- **Floating chat bubbles** with rust accent borders
+- **Typing indicators** with animated rust dots
+- **Code syntax highlighting** in chat responses
+- **Smart suggestions** appearing as rust-colored pills
+- **Voice-to-text** integration with visual feedback
+
+### AI Enhancement Indicators
+- **Rust-colored badges** for AI-enhanced content
+- **Subtle glow effects** around AI-powered features
+- **Loading states** with rust progress indicators
+- **Confidence indicators** using rust opacity levels
+
+## 🎨 Component Design Standards
+
+### Typography
+```css
+/* Vercel-inspired typography scale */
+--font-size-xs: 0.75rem;
+--font-size-sm: 0.875rem;
+--font-size-base: 1rem;
+--font-size-lg: 1.125rem;
+--font-size-xl: 1.25rem;
+--font-size-2xl: 1.5rem;
+--font-size-3xl: 1.875rem;
+--font-size-4xl: 2.25rem;
+
+/* Font families */
+--font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+--font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+```
+
+### Spacing & Layout
+```css
+/* Consistent spacing scale */
+--spacing-xs: 0.25rem;
+--spacing-sm: 0.5rem;
+--spacing-md: 1rem;
+--spacing-lg: 1.5rem;
+--spacing-xl: 2rem;
+--spacing-2xl: 3rem;
+--spacing-3xl: 4rem;
+
+/* Border radius */
+--radius-sm: 4px;
+--radius-md: 8px;
+--radius-lg: 12px;
+--radius-xl: 16px;
+```
+
+### Button Styles
+```tsx
+// Primary rust button
+<button className="btn-rust-primary">
+  {/* Rust background with white text */}
+</button>
+
+// Secondary outline button
+<button className="btn-rust-outline">
+  {/* Transparent background with rust border */}
+</button>
+
+// AI-powered button
+<button className="btn-ai-enhanced">
+  <AISparkleIcon />
+  AI Generate
+</button>
+```
+
+## 🎯 UX Principles
+
+### Performance-First UX
+- **Sub-200ms interactions** for all UI elements
+- **Skeleton loading states** with rust accents
+- **Progressive image loading** with blur-to-sharp transitions
+- **Optimistic UI updates** for immediate feedback
+- **Smooth 60fps animations** throughout
+
+### Accessibility Standards
+- **WCAG 2.1 AA compliance** minimum
+- **High contrast ratios** (especially with rust on black)
+- **Keyboard navigation** for all interactive elements
+- **Screen reader optimization** with proper ARIA labels
+- **Reduced motion support** for accessibility preferences
+
+### Information Hierarchy
+```css
+/* Visual hierarchy using rust accents */
+.primary-action { color: var(--color-rust-primary); }
+.secondary-info { color: var(--color-gray-400); }
+.tertiary-details { color: var(--color-gray-600); }
+.ai-enhanced { border-left: 3px solid var(--color-rust-primary); }
+```
+
+## 📐 Layout Patterns
+
+### Grid Systems
+- **12-column responsive grid** for web layouts
+- **Flexible card grids** for game listings
+- **Masonry layouts** for varied content sizes
+- **Sidebar + main content** for desktop app
+
+### Card Components
+```tsx
+// Standard game card
+<div className="game-card">
+  <div className="game-thumbnail">
+    <img className="retina-optimized" />
+    {aiRecommended && <AIBadge />}
+  </div>
+  <div className="game-info">
+    <h3 className="game-title">{title}</h3>
+    <p className="game-description">{description}</p>
+    <div className="game-tags">
+      {tags.map(tag => <Tag variant="rust" />)}
+    </div>
+  </div>
+</div>
+```
+
+## 🔧 Implementation Guidelines
+
+### CSS-in-JS vs Tailwind
+- **Use Tailwind CSS** for utility-first styling in [apps/web](mdc:apps/web)
+- **CSS modules** for component-specific styles in [apps/desktop](mdc:apps/desktop)
+- **CSS custom properties** for theme consistency across both apps
+- **Rust color utilities** available as Tailwind classes
+
+### Animation Standards
+```css
+/* Smooth, performant animations */
+.fade-in { animation: fadeIn 0.2s ease-out; }
+.slide-up { animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.rust-glow { 
+  box-shadow: 0 0 20px rgba(205, 127, 50, 0.3);
+  transition: box-shadow 0.2s ease;
+}
+```
+
+### Retina & High-DPI Support
+- **2x/3x image assets** for all icons and graphics
+- **SVG icons** preferred over raster images
+- **High-resolution screenshots** for game previews
+- **Crisp text rendering** with proper font smoothing
+
+## 🚀 AI-Enhanced UX Patterns
+
+### Smart Suggestions
+- **Context-aware recommendations** appearing as rust-highlighted cards
+- **Auto-complete search** with AI-powered results
+- **Personalized game discovery** based on user behavior
+- **Smart tagging** suggestions for developers
+
+### Conversational Interfaces
+- **AI chat bubbles** with rust accent styling
+- **Natural language search** with highlighted keywords
+- **Voice commands** with visual feedback
+- **Smart help system** integrated throughout the UI
+
+### Progressive Enhancement
+- **Baseline functionality** works without AI
+- **AI features enhance** but don't replace core UX
+- **Graceful degradation** when AI services are unavailable
+- **User control** over AI feature usage
+
+## 📋 Component Checklist
+
+Before creating any new component, ensure:
+- [ ] **Retina-ready** graphics and icons
+- [ ] **Rust accent** integration where appropriate
+- [ ] **Dark theme** optimized colors and contrast
+- [ ] **AI enhancement** opportunities identified
+- [ ] **Responsive design** for all screen sizes
+- [ ] **Performance optimized** (< 200ms interactions)
+- [ ] **Accessibility compliant** with proper ARIA
+- [ ] **Native feel** on target platform
+
+## 🎨 Design Tokens
+
+Create consistent design tokens in [packages/ui/src/tokens.ts](mdc:packages/ui/src/tokens.ts):
+```typescript
+export const designTokens = {
+  colors: {
+    rust: {
+      50: '#fdf8f3',
+      100: '#fae8d0',
+      500: '#cd7f32',
+      900: '#8b4513',
+    },
+    // ... complete color scale
+  },
+  spacing: {
+    xs: '0.25rem',
+    // ... spacing scale
+  },
+  typography: {
+    // ... font scales
+  },
+};
+```
+
+**Remember: Every pixel should feel intentional, every interaction should delight, and AI should enhance without overwhelming the core experience.**

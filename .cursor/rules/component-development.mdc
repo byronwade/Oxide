@@ -1,0 +1,211 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Component Development Guidelines
+
+## Core Component Principles
+
+**EVERY COMPONENT** must follow the black and rust design system, incorporate AI seamlessly, and prioritize UX above all else. Components should feel native and retina-ready across both web and desktop platforms.
+
+## 🎨 Design System Integration
+
+### Color Usage
+- **Primary actions**: Use rust colors (`#cd7f32`, `#b87333`)
+- **Backgrounds**: Black variants (`#000000`, `#0a0a0a`, `#111111`)
+- **AI indicators**: Rust glow effects and borders
+- **Text hierarchy**: White primary, gray secondaries
+- **Never use gradients** - stick to solid colors and subtle shadows
+
+### Component Structure
+```tsx
+// Standard component template
+import { cn } from '@/lib/utils';
+import { forwardRef } from 'react';
+
+interface ComponentProps {
+  variant?: 'default' | 'rust' | 'ai-enhanced';
+  className?: string;
+  // ... other props
+}
+
+const Component = forwardRef<HTMLElement, ComponentProps>(
+  ({ variant = 'default', className, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          // Base styles
+          'base-component-styles',
+          // Variant styles
+          {
+            'rust-variant-styles': variant === 'rust',
+            'ai-enhanced-styles': variant === 'ai-enhanced',
+          },
+          className
+        )}
+        {...props}
+      />
+    );
+  }
+);
+```
+
+## 🤖 AI Integration Standards
+
+### AI-Enhanced Components
+- **AI Suggestion Cards**: Always include rust accent borders
+- **AI Loading States**: Use rust progress indicators
+- **AI Badges**: Small rust-colored indicators for AI-generated content
+- **Smart Tooltips**: Context-aware help with AI backing
+
+### AI Component Patterns
+```tsx
+// AI suggestion wrapper
+<AIWrapper confidence={0.85}>
+  <GameCard game={aiSuggestedGame} />
+</AIWrapper>
+
+// AI chat interface
+<AIChatBubble 
+  message={message}
+  variant="rust"
+  isTyping={isTyping}
+/>
+
+// AI enhancement indicator
+<AIBadge 
+  type="suggestion"
+  confidence={confidence}
+  className="rust-glow"
+/>
+```
+
+## 📱 Platform-Specific Adaptations
+
+### Web App Components ([apps/web](mdc:apps/web))
+- **Card-based layouts** with subtle shadows
+- **Hover states** with rust accent transitions
+- **Responsive breakpoints** for mobile/tablet/desktop
+- **Smooth CSS animations** for interactions
+- **Web-optimized icons** (preferably SVG)
+
+### Desktop App Components ([apps/desktop](mdc:apps/desktop))
+- **Native OS styling** adaptation
+- **Context menus** and right-click interactions
+- **Keyboard shortcuts** for all primary actions
+- **System notifications** integration
+- **Desktop-specific icons** and visual cues
+
+## 🎯 UX-First Development
+
+### Performance Requirements
+- **< 200ms** interaction response time
+- **60fps animations** for all transitions
+- **Lazy loading** for heavy components
+- **Optimistic updates** for user actions
+- **Progressive enhancement** for AI features
+
+### Accessibility Mandates
+- **WCAG 2.1 AA** compliance minimum
+- **Keyboard navigation** for all interactive elements
+- **Screen reader** support with proper ARIA labels
+- **High contrast** ratios (especially rust on black)
+- **Reduced motion** support for accessibility preferences
+
+## 🔧 Component Implementation Rules
+
+### Shared UI Package ([packages/ui](mdc:packages/ui))
+- **Cross-platform components** that work in both web and desktop
+- **Consistent API** across all components
+- **Design tokens** for colors, spacing, typography
+- **Rust theme** integration in all components
+
+### Component Checklist
+Before creating/updating any component:
+- [ ] **Follows rust + black color scheme**
+- [ ] **Includes AI enhancement opportunities**
+- [ ] **Retina-optimized** graphics and icons
+- [ ] **Performance tested** (< 200ms interactions)
+- [ ] **Accessibility compliant** with proper ARIA
+- [ ] **Responsive design** for all screen sizes
+- [ ] **Native feel** on target platform
+- [ ] **TypeScript** types properly defined
+- [ ] **Unit tests** written for core functionality
+
+### Animation Guidelines
+```css
+/* Standard transition timing */
+.component-transition {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Rust glow effect for AI features */
+.ai-glow {
+  box-shadow: 0 0 20px rgba(205, 127, 50, 0.3);
+  transition: box-shadow 0.2s ease;
+}
+
+/* Smooth hover states */
+.hover-rust:hover {
+  border-color: #cd7f32;
+  box-shadow: 0 0 10px rgba(205, 127, 50, 0.2);
+}
+```
+
+## 🎨 Visual Hierarchy
+
+### Information Priority
+1. **Primary actions** - Rust colored buttons and CTAs
+2. **AI suggestions** - Rust bordered cards with glow
+3. **Main content** - White text on black backgrounds
+4. **Secondary info** - Gray text for supporting details
+5. **Tertiary details** - Darker gray for metadata
+
+### Component Spacing
+```tsx
+// Consistent spacing using design tokens
+<div className="space-y-md">  {/* 1rem vertical spacing */}
+  <h2 className="text-xl font-semibold text-white">
+    Title
+  </h2>
+  <p className="text-gray-400">
+    Supporting text
+  </p>
+</div>
+```
+
+## 🚀 AI-First Component Design
+
+### Smart Defaults
+- **AI-powered suggestions** built into form components
+- **Intelligent auto-complete** for search inputs
+- **Context-aware help** tooltips throughout
+- **Predictive text** for game descriptions
+
+### AI Feedback Loops
+- **User preference learning** from component interactions
+- **Usage analytics** for AI model improvement
+- **A/B testing** AI-enhanced vs standard components
+- **Performance metrics** for AI feature adoption
+
+## 📋 Development Workflow
+
+### Component Creation Process
+1. **Design in Figma** with rust + black theme
+2. **Create TypeScript** interface and props
+3. **Implement base** component with accessibility
+4. **Add AI enhancement** opportunities
+5. **Write unit tests** for functionality
+6. **Test on both** web and desktop platforms
+7. **Document usage** examples and props
+
+### Code Review Requirements
+- **Design system compliance** verification
+- **AI integration** appropriateness check
+- **Performance impact** assessment
+- **Accessibility audit** completion
+- **Cross-platform** compatibility testing
+
+**Remember: Every component is an opportunity to create a delightful, AI-enhanced experience that feels native and performs flawlessly.**

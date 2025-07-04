@@ -1,0 +1,165 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Speed Optimization - Priority #1
+
+## Core Performance Philosophy
+
+**SPEED IS THE #1 PRIORITY** for every page in LaunchBeacon. Every interaction must be < 200ms. Performance trumps all other considerations.
+
+## Mandatory Performance Requirements
+
+### 🎯 Target Metrics
+- **LCP (Largest Contentful Paint)**: < 200ms
+- **FID (First Input Delay)**: < 50ms  
+- **CLS (Cumulative Layout Shift)**: < 0.1
+- **TTFB (Time to First Byte)**: < 100ms
+- **Total Page Load**: < 500ms
+
+## Next.js 15 Speed Optimizations
+
+### 1. Server Components First
+- **ALWAYS use Server Components** by default in [app/](mdc:app) directory
+- Only use Client Components when absolutely necessary for interactivity
+- Minimize client-side JavaScript bundle size
+
+### 2. Image Optimization
+```tsx
+// ALWAYS use Next.js Image component with optimization
+import Image from 'next/image'
+
+<Image
+  src="/game-screenshot.jpg"
+  alt="Game screenshot"
+  width={800}
+  height={600}
+  priority={isAboveFold}
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,..."
+/>
+```
+
+### 3. Fonts & Styles
+- Use `next/font` for font optimization in [app/layout.tsx](mdc:app/layout.tsx)
+- Preload critical fonts and CSS
+- Minimize [globals.css](mdc:app/globals.css) size
+
+### 4. Code Splitting & Dynamic Imports
+```tsx
+// Dynamic imports for non-critical components
+const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
+  loading: () => <Skeleton />
+})
+```
+
+## Caching Strategy
+
+### 1. Server-Side Caching
+- **Use `cache()` function** over `unstable_cache()` (per user preference)
+- Cache database queries and API responses
+- Implement Redis for session and data caching
+
+### 2. Static Generation
+- Use `generateStaticParams()` for dynamic routes
+- Pre-generate game pages at build time when possible
+- Implement ISR (Incremental Static Regeneration) for frequently updated content
+
+### 3. CDN & Asset Optimization
+- Serve static assets from CDN (Cloudflare R2)
+- Compress images with WebP/AVIF formats
+- Minimize and compress CSS/JS bundles
+
+## Database Performance
+
+### 1. Query Optimization
+- Use database indexes for frequently queried fields
+- Implement query caching at the Prisma level
+- Batch database operations where possible
+
+### 2. Connection Pooling
+- Configure connection pooling for database efficiency
+- Use read replicas for read-heavy operations
+
+## Bundle Optimization
+
+### 1. Package.json Management
+- Regularly audit [package.json](mdc:package.json) for unused dependencies
+- Use tree-shaking compatible libraries
+- Prefer lighter alternatives (e.g., date-fns over moment.js)
+
+### 2. Build Optimization
+- Configure [next.config.ts](mdc:next.config.ts) for maximum performance:
+```typescript
+const nextConfig = {
+  experimental: {
+    optimizePackageImports: ['@/components/ui'],
+  },
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
+  compress: true,
+  poweredByHeader: false,
+}
+```
+
+## UI Component Speed Rules
+
+### 1. Shadcn/ui Components
+- Use [components/ui/](mdc:components/ui) components efficiently
+- Lazy load heavy components like charts and tables
+- Minimize re-renders with proper memoization
+
+### 2. Tailwind CSS Optimization
+- Purge unused CSS classes
+- Use JIT compilation
+- Minimize custom CSS in favor of Tailwind utilities
+
+## API Performance
+
+### 1. Server Actions
+- Keep server actions lightweight and fast
+- Use streaming for large data operations
+- Implement proper error boundaries
+
+### 2. API Routes
+- Minimize API route response sizes
+- Use compression for API responses
+- Implement rate limiting to prevent performance degradation
+
+## Monitoring & Measurement
+
+### 1. Core Web Vitals Tracking
+- Monitor performance metrics in production
+- Set up alerts for performance degradation
+- Use Vercel Analytics or similar tools
+
+### 2. Performance Budgets
+- Set bundle size limits (< 200KB initial JS bundle)
+- Monitor and alert on performance metric thresholds
+- Regular performance audits with Lighthouse
+
+## Critical Performance Checks
+
+Before deploying ANY page, verify:
+- [ ] Lighthouse score > 95 for Performance
+- [ ] No render-blocking resources
+- [ ] Images are optimized and properly sized
+- [ ] JavaScript bundle is minimal
+- [ ] Critical CSS is inlined
+- [ ] Fonts are preloaded
+- [ ] Database queries are optimized
+- [ ] Caching is implemented
+
+## Speed-First Development Rules
+
+1. **Measure First**: Profile before optimizing
+2. **Server-Side Rendering**: Default to SSR/SSG when possible
+3. **Lazy Loading**: Load non-critical content after initial render
+4. **Minimize JavaScript**: Every KB counts
+5. **Cache Everything**: Database, API responses, static assets
+6. **Optimize Images**: Use modern formats and proper sizing
+7. **Eliminate Layout Shifts**: Reserve space for dynamic content
+
+**Remember: If it's not fast, it's not ready for LaunchBeacon users.**

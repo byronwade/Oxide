@@ -1,0 +1,254 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Google SEO Requirements - Every Page Must Comply
+
+## Core SEO Philosophy
+
+**EVERY PAGE** in LaunchBeacon must follow Google's 200+ ranking factors from [Backlinko's comprehensive guide](mdc:https:/backlinko.com/google-ranking-factors). SEO optimization is mandatory, not optional.
+
+## 🎯 Top 8 Critical Ranking Factors
+
+Based on the latest Google algorithm updates, prioritize these factors:
+
+1. **Quality Content** - Informative, engaging, valuable content
+2. **High-Quality Backlinks** - Earn links from reputable websites  
+3. **Technical SEO** - Fast, mobile-friendly, crawlable sites
+4. **Keyword Optimization** - Strategic keyword placement
+5. **User Experience (UX)** - Clean, navigable, mobile-first design
+6. **Schema Markup** - Structured data for better understanding
+7. **Social Signals** - Encourage engagement and sharing
+8. **Brand Signals** - Strong online reputation and presence
+
+## 📄 On-Page SEO Requirements
+
+### 1. Title Tags & Meta Descriptions
+```tsx
+// ALWAYS include optimized title and meta tags in layout.tsx
+export const metadata: Metadata = {
+  title: "Primary Keyword | Secondary Keyword | LaunchBeacon",
+  description: "Compelling 155-character description with target keywords and call-to-action",
+  keywords: "game launcher, indie games, steam alternative, DRM-free games",
+  openGraph: {
+    title: "Social Media Optimized Title",
+    description: "Engaging social description",
+    images: ['/og-image.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Twitter Optimized Title",
+    description: "Twitter description",
+  }
+}
+```
+
+### 2. Header Tag Optimization
+- **H1**: One per page, include primary keyword
+- **H2-H6**: Logical hierarchy with secondary keywords
+- Use semantic HTML structure throughout [app/](mdc:app) pages
+
+### 3. Content Quality Standards
+- **Minimum 300 words** per page (longer for competitive keywords)
+- **Unique, original content** - no duplicate content
+- **Target search intent** - match user's search purpose
+- **Include multimedia** - images, videos, interactive elements
+- **Regular content updates** - keep information fresh
+
+### 4. Internal Linking Strategy
+- **Link to relevant pages** using descriptive anchor text
+- **Create content clusters** around topic themes
+- **Use breadcrumb navigation** for better site structure
+- **Implement related posts/games** sections
+
+## 🔧 Technical SEO Mandates
+
+### 1. Site Speed & Performance
+- **Core Web Vitals compliance** (LCP < 2.5s, FID < 100ms, CLS < 0.1)
+- **Mobile-first indexing** optimization
+- **HTTPS everywhere** - secure all pages
+- **Compressed images** with alt text and lazy loading
+
+### 2. Mobile Optimization
+```tsx
+// Ensure responsive design in all components
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  {/* Mobile-first, responsive layout */}
+</div>
+```
+
+### 3. Structured Data Implementation
+```typescript
+// Add JSON-LD structured data to every relevant page
+const gameStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Game Title",
+  "description": "Game description",
+  "operatingSystem": "Windows, macOS, Linux",
+  "applicationCategory": "Game",
+  "offers": {
+    "@type": "Offer",
+    "price": "19.99",
+    "priceCurrency": "USD"
+  }
+}
+```
+
+### 4. XML Sitemap & Robots.txt
+- **Automatic sitemap generation** in [next.config.ts](mdc:next.config.ts)
+- **Proper robots.txt** configuration
+- **Submit sitemaps** to Google Search Console
+
+## 🌐 Site Architecture Requirements
+
+### 1. URL Structure
+- **Clean, descriptive URLs**: `/games/indie-platformer-adventure`
+- **Avoid dynamic parameters** where possible
+- **Use hyphens** for word separation
+- **Implement canonical URLs** to prevent duplicate content
+
+### 2. Navigation & Site Structure
+- **Logical hierarchy** - max 3 clicks to any page
+- **Breadcrumb navigation** on all pages
+- **Categories and tags** for content organization
+- **Related content suggestions**
+
+## 📊 User Experience Factors
+
+### 1. Engagement Metrics
+- **Optimize for low bounce rate** with engaging content
+- **Increase dwell time** with interactive elements
+- **Improve click-through rates** with compelling titles/descriptions
+- **Encourage user interaction** with comments, reviews, ratings
+
+### 2. Page Experience Signals
+- **Safe browsing** - no malware or deceptive content
+- **HTTPS security** across all pages
+- **No intrusive interstitials** that hurt mobile experience
+- **Accessible design** following WCAG guidelines
+
+## 🔗 Link Building & Authority
+
+### 1. Internal Link Optimization
+- **Strategic internal linking** between related content
+- **Use descriptive anchor text** with target keywords
+- **Link to high-authority pages** to pass PageRank
+- **Avoid excessive internal links** (stay under 100 per page)
+
+### 2. External Link Strategy
+- **Link to authoritative sources** when referencing information
+- **Use rel="nofollow"** for sponsored/affiliate links
+- **Avoid linking to spam sites** or "bad neighborhoods"
+- **Monitor outbound link quality** regularly
+
+## 🏷️ Content & Keyword Strategy
+
+### 1. Keyword Research & Implementation
+```typescript
+// Target different keyword types across pages
+const keywordStrategy = {
+  primary: "steam alternative",
+  secondary: ["indie game launcher", "DRM-free games"],
+  longTail: ["best alternative to steam for indie games"],
+  local: ["game launcher USA", "indie gaming platform"]
+}
+```
+
+### 2. Content Freshness
+- **Regular content updates** - at least monthly
+- **News and blog sections** for fresh content
+- **Game release announcements** and updates
+- **Community-generated content** for ongoing freshness
+
+## 🎮 Gaming-Specific SEO Features
+
+### 1. Game Page Optimization
+- **Game-specific structured data** (SoftwareApplication schema)
+- **Screenshot galleries** with optimized alt text
+- **Video trailers** with proper embedding
+- **User reviews and ratings** for social proof
+- **System requirements** clearly displayed
+
+### 2. Developer Profile SEO
+- **Developer bio pages** with structured data
+- **Portfolio showcase** with proper optimization
+- **Social media integration** and verification
+- **Press kit and media resources**
+
+## 📱 Schema Markup Requirements
+
+Implement structured data for:
+- **Organization** (LaunchBeacon company info)
+- **SoftwareApplication** (for games)
+- **Person** (for developer profiles)
+- **Review** (for game reviews)
+- **FAQ** (for help sections)
+- **BreadcrumbList** (for navigation)
+
+## 📈 Analytics & Monitoring
+
+### 1. Required Tracking
+- **Google Search Console** setup and monitoring
+- **Google Analytics 4** with enhanced ecommerce
+- **Core Web Vitals** monitoring
+- **Keyword ranking** tracking
+
+### 2. Regular SEO Audits
+- **Monthly technical SEO** audits
+- **Content gap analysis** quarterly
+- **Backlink profile** monitoring
+- **Competitor SEO analysis** ongoing
+
+## 🚫 SEO Penalties to Avoid
+
+### 1. On-Site Webspam Factors
+- **No keyword stuffing** in content or meta tags  
+- **Avoid cloaking** or deceptive redirects
+- **No auto-generated content** or article spinning
+- **Limit ads above the fold** - content first
+- **No doorway pages** or thin affiliate content
+
+### 2. Off-Site Risk Factors
+- **Avoid paid link schemes** or link farms
+- **No excessive reciprocal linking**
+- **Monitor for negative SEO** attacks
+- **Don't buy bulk directory submissions**
+
+## ✅ SEO Checklist for Every Page
+
+Before publishing ANY page in LaunchBeacon:
+
+- [ ] **Title tag** optimized with primary keyword (50-60 chars)
+- [ ] **Meta description** compelling with keywords (150-160 chars)  
+- [ ] **H1 tag** includes primary keyword
+- [ ] **URL structure** is clean and descriptive
+- [ ] **Images optimized** with alt text and proper file names
+- [ ] **Internal links** to 3-5 relevant pages
+- [ ] **External links** to authoritative sources (when relevant)
+- [ ] **Schema markup** implemented appropriately
+- [ ] **Mobile-responsive** design verified
+- [ ] **Page speed** under 3 seconds load time
+- [ ] **Content quality** meets E-E-A-T standards
+- [ ] **Social sharing** buttons included
+- [ ] **Canonical URL** set correctly
+
+## 🎯 Gaming Industry SEO Targets
+
+### Priority Keywords to Target:
+- "Steam alternative"
+- "Indie game launcher" 
+- "DRM-free games"
+- "Game distribution platform"
+- "PC game launcher"
+- "Digital game store"
+
+### Content Themes:
+- Game reviews and ratings
+- Developer interviews and spotlights  
+- Gaming news and industry updates
+- How-to guides for game development
+- Platform comparisons and features
+
+**Remember: Every page is an opportunity to rank in Google. Make it count.**

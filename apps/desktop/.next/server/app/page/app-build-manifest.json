@@ -1,0 +1,30 @@
+{
+  "pages": {
+    "/page": [
+      "static/chunks/[root-of-the-server]__121f3384._.css",
+      "static/chunks/node_modules_aad1a154._.js",
+      "static/chunks/apps_desktop_559cf28c._.js",
+      "static/chunks/apps_desktop_app_layout_tsx_c0237562._.js",
+      "static/chunks/apps_desktop_components_header_tsx_b0de4409._.js",
+      "static/chunks/apps_desktop_components_store_tsx_401f4a30._.js",
+      "static/chunks/apps_desktop_components_friends_tsx_b2296aeb._.js",
+      "static/chunks/apps_desktop_components_cloud-saves_tsx_d89bc04c._.js",
+      "static/chunks/apps_desktop_components_game-detail-page_tsx_c21a86cb._.js",
+      "static/chunks/apps_desktop_components_62c04d26._.js",
+      "static/chunks/apps_desktop_app_page_tsx_7ac508a6._.js",
+      "static/chunks/node_modules_lucide-react_dist_esm_icons_7b032262._.js",
+      "static/chunks/node_modules_recharts_es6_f5440da9._.js",
+      "static/chunks/node_modules_@radix-ui_790d015b._.js",
+      "static/chunks/node_modules_@floating-ui_9ec1fa39._.js",
+      "static/chunks/node_modules_0ce3e6ec._.js",
+      "static/chunks/apps_desktop_app_page_tsx_fc785359._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
+      "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
+      "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
+      "static/chunks/node_modules_next_dist_2ecbf5fa._.js",
+      "static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js",
+      "static/chunks/apps_desktop_e69f0d32._.js",
+      "static/chunks/apps_desktop_93808211._.js"
+    ]
+  }
+}

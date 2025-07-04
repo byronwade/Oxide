@@ -1,0 +1,52 @@
+/* Desktop-specific styles for window rounding and effects */
+
+/* Window mask for rounded corners */
+body {
+    mask: radial-gradient(circle at 12px 12px, transparent 12px, black 12px),
+        radial-gradient(circle at calc(100% - 12px) 12px, transparent 12px, black 12px),
+        radial-gradient(circle at 12px calc(100% - 12px), transparent 12px, black 12px),
+        radial-gradient(circle at calc(100% - 12px) calc(100% - 12px), transparent 12px, black 12px);
+    mask-composite: intersect;
+    -webkit-mask: radial-gradient(circle at 12px 12px, transparent 12px, black 12px),
+        radial-gradient(circle at calc(100% - 12px) 12px, transparent 12px, black 12px),
+        radial-gradient(circle at 12px calc(100% - 12px), transparent 12px, black 12px),
+        radial-gradient(circle at calc(100% - 12px) calc(100% - 12px), transparent 12px, black 12px);
+    -webkit-mask-composite: intersect;
+}
+
+/* Alternative approach using clip-path */
+.window-mask {
+    clip-path: inset(0 round 12px);
+}
+
+/* Ensure proper rendering on different platforms */
+@supports (border-radius: 12px) {
+    .window-content {
+        border-radius: 12px;
+        overflow: hidden;
+    }
+}
+
+/* macOS-specific window styling */
+@media (platform: macos) {
+    body {
+        -webkit-app-region: no-drag;
+        background: transparent;
+    }
+
+    .title-bar {
+        -webkit-app-region: drag;
+    }
+}
+
+/* Windows-specific window styling */
+@media (platform: windows) {
+    body {
+        background: transparent;
+    }
+}
+
+/* Enhanced shadow for floating effect */
+.window-shadow {
+    filter: drop-shadow(0 20px 25px rgb(0 0 0 / 0.25)) drop-shadow(0 8px 10px rgb(0 0 0 / 0.04));
+}

@@ -1,0 +1,2411 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-06-29T19:06:22.789Z",
+    "totalCount": 100,
+    "apiVersion": "v2",
+    "cacheExpiry": 300
+  },
+  "data": [
+    {
+      "id": "game_011",
+      "title": "Pizza Tower",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1999,
+      "rating": 4.9,
+      "tags": [
+        "Platformer",
+        "2D",
+        "Indie"
+      ],
+      "downloadCount": 340000,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_012",
+      "title": "A Dark Room",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 0,
+      "rating": 4.5,
+      "tags": [
+        "Incremental",
+        "Text-based",
+        "Atmospheric"
+      ],
+      "downloadCount": 89000,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_013",
+      "title": "Dredge",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2499,
+      "rating": 4.8,
+      "tags": [
+        "Fishing",
+        "Horror",
+        "Adventure"
+      ],
+      "downloadCount": 156000,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_014",
+      "title": "Cassette Beasts",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1999,
+      "rating": 4.7,
+      "tags": [
+        "RPG",
+        "Monster Collection",
+        "Pixel Art"
+      ],
+      "downloadCount": 78000,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_015",
+      "title": "Celeste",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1999,
+      "rating": 4.9,
+      "tags": [
+        "Platformer",
+        "Difficult",
+        "Story Rich"
+      ],
+      "downloadCount": 290000,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_016",
+      "title": "Katana ZERO",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1499,
+      "rating": 4.8,
+      "tags": [
+        "Action",
+        "Neo-noir",
+        "Time Manipulation"
+      ],
+      "downloadCount": 198000,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_017",
+      "title": "Outer Wilds",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2499,
+      "rating": 4.9,
+      "tags": [
+        "Exploration",
+        "Mystery",
+        "Space"
+      ],
+      "downloadCount": 245000,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_018",
+      "title": "SUPERHOT",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2499,
+      "rating": 4.6,
+      "tags": [
+        "Action",
+        "Time Manipulation",
+        "Minimalist"
+      ],
+      "downloadCount": 567000,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_019",
+      "title": "Hades",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2499,
+      "rating": 4.9,
+      "tags": [
+        "Roguelike",
+        "Action",
+        "Mythology"
+      ],
+      "downloadCount": 890000,
+      "isHot": false,
+      "isNew": true,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_020",
+      "title": "Disco Elysium",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3999,
+      "rating": 4.8,
+      "tags": [
+        "RPG",
+        "Narrative",
+        "Detective"
+      ],
+      "downloadCount": 234000,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_021",
+      "title": "Wind Force",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 4670,
+      "rating": 4.4,
+      "tags": [
+        "3D",
+        "Roguelike",
+        "Puzzle"
+      ],
+      "downloadCount": 78470,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_022",
+      "title": "Mystic Realm",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2695,
+      "rating": 4,
+      "tags": [
+        "Multiplayer",
+        "Platformer",
+        "Real-time"
+      ],
+      "downloadCount": 355855,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_023",
+      "title": "Storm Strike",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 4813,
+      "rating": 3.6,
+      "tags": [
+        "Turn-based",
+        "Action",
+        "Shooter"
+      ],
+      "downloadCount": 492470,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_024",
+      "title": "Moon Origins",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3984,
+      "rating": 3.6,
+      "tags": [
+        "Platformer",
+        "Adventure",
+        "Pixel Art"
+      ],
+      "downloadCount": 145562,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_025",
+      "title": "Void Arena",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3903,
+      "rating": 4.4,
+      "tags": [
+        "Strategy",
+        "Singleplayer",
+        "Simulation"
+      ],
+      "downloadCount": 20884,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_026",
+      "title": "Digital Force",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1486,
+      "rating": 4,
+      "tags": [
+        "Indie",
+        "2D",
+        "Platformer"
+      ],
+      "downloadCount": 17472,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_027",
+      "title": "Quantum Story",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 653,
+      "rating": 4.9,
+      "tags": [
+        "Fantasy",
+        "Roguelike",
+        "Sci-Fi"
+      ],
+      "downloadCount": 393692,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_028",
+      "title": "Star Universe",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2135,
+      "rating": 4.7,
+      "tags": [
+        "Platformer",
+        "Singleplayer",
+        "Atmospheric"
+      ],
+      "downloadCount": 428041,
+      "isHot": true,
+      "isNew": true,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_029",
+      "title": "Void Realm",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3955,
+      "rating": 4.9,
+      "tags": [
+        "Indie",
+        "Stealth",
+        "2D"
+      ],
+      "downloadCount": 76774,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_030",
+      "title": "Storm Battle",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 897,
+      "rating": 3.9,
+      "tags": [
+        "Sports",
+        "3D",
+        "Real-time"
+      ],
+      "downloadCount": 359365,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_031",
+      "title": "Hidden Legends",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3336,
+      "rating": 4.2,
+      "tags": [
+        "Shooter",
+        "Roguelike",
+        "Atmospheric"
+      ],
+      "downloadCount": 359956,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_032",
+      "title": "Ice Master",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3272,
+      "rating": 4.4,
+      "tags": [
+        "Atmospheric",
+        "Roguelike",
+        "Retro"
+      ],
+      "downloadCount": 77525,
+      "isHot": true,
+      "isNew": true,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_033",
+      "title": "Hidden Tales",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 122,
+      "rating": 5,
+      "tags": [
+        "Sports",
+        "Turn-based",
+        "Survival"
+      ],
+      "downloadCount": 187858,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_034",
+      "title": "Fire Dimension",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2596,
+      "rating": 4.3,
+      "tags": [
+        "Turn-based",
+        "Cyberpunk",
+        "Survival"
+      ],
+      "downloadCount": 304561,
+      "isHot": true,
+      "isNew": true,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_035",
+      "title": "Wind Empire",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 4228,
+      "rating": 4.2,
+      "tags": [
+        "Platformer",
+        "2D",
+        "Strategy"
+      ],
+      "downloadCount": 128647,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_036",
+      "title": "Ancient Adventure",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3197,
+      "rating": 4.5,
+      "tags": [
+        "Sports",
+        "Stealth",
+        "Shooter"
+      ],
+      "downloadCount": 18189,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_037",
+      "title": "Void Kingdom",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1100,
+      "rating": 3.7,
+      "tags": [
+        "Fighting",
+        "Real-time",
+        "Horror"
+      ],
+      "downloadCount": 308668,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_038",
+      "title": "Future Master",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3897,
+      "rating": 3.9,
+      "tags": [
+        "Survival",
+        "Racing",
+        "Stealth"
+      ],
+      "downloadCount": 483560,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_039",
+      "title": "Digital Strike",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2492,
+      "rating": 3.5,
+      "tags": [
+        "Action",
+        "Story Rich",
+        "Multiplayer"
+      ],
+      "downloadCount": 87509,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_040",
+      "title": "Ancient Force",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 699,
+      "rating": 4.2,
+      "tags": [
+        "Puzzle",
+        "Real-time",
+        "Story Rich"
+      ],
+      "downloadCount": 491350,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_041",
+      "title": "Mystic Elite",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 4140,
+      "rating": 3.9,
+      "tags": [
+        "Minimalist",
+        "Indie",
+        "Action"
+      ],
+      "downloadCount": 98862,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_042",
+      "title": "Nova Force",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1407,
+      "rating": 3.6,
+      "tags": [
+        "Real-time",
+        "Fantasy",
+        "Adventure"
+      ],
+      "downloadCount": 269538,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_043",
+      "title": "Lost Dimension",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2097,
+      "rating": 4.7,
+      "tags": [
+        "RPG",
+        "Sci-Fi",
+        "Stealth"
+      ],
+      "downloadCount": 290975,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_044",
+      "title": "Neon Quest",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3052,
+      "rating": 4.1,
+      "tags": [
+        "3D",
+        "Indie",
+        "Minimalist"
+      ],
+      "downloadCount": 109574,
+      "isHot": false,
+      "isNew": true,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_045",
+      "title": "Digital City",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 189,
+      "rating": 3.9,
+      "tags": [
+        "Horror",
+        "Pixel Art",
+        "Sci-Fi"
+      ],
+      "downloadCount": 436857,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_046",
+      "title": "Phoenix Galaxy",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 307,
+      "rating": 3.7,
+      "tags": [
+        "Fighting",
+        "Turn-based",
+        "Puzzle"
+      ],
+      "downloadCount": 401874,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_047",
+      "title": "Nova Kingdom",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2124,
+      "rating": 3.9,
+      "tags": [
+        "Sports",
+        "Indie",
+        "Atmospheric"
+      ],
+      "downloadCount": 258270,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_048",
+      "title": "Shadow Hero",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 727,
+      "rating": 4.1,
+      "tags": [
+        "Fantasy",
+        "Real-time",
+        "Action"
+      ],
+      "downloadCount": 81980,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_049",
+      "title": "Wolf Kingdom",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 833,
+      "rating": 4.6,
+      "tags": [
+        "Puzzle",
+        "Indie",
+        "Turn-based"
+      ],
+      "downloadCount": 439189,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_050",
+      "title": "Lost Tales",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 4307,
+      "rating": 4.9,
+      "tags": [
+        "Turn-based",
+        "Fighting",
+        "Real-time"
+      ],
+      "downloadCount": 486370,
+      "isHot": false,
+      "isNew": true,
+      "isOnSale": true,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_051",
+      "title": "Star Story",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2209,
+      "rating": 4.3,
+      "tags": [
+        "Fantasy",
+        "Platformer",
+        "Adventure"
+      ],
+      "downloadCount": 207844,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_052",
+      "title": "Moon Island",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 4186,
+      "rating": 3.5,
+      "tags": [
+        "Indie",
+        "Racing",
+        "Shooter"
+      ],
+      "downloadCount": 210686,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_053",
+      "title": "Star Realm",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 4733,
+      "rating": 4.4,
+      "tags": [
+        "RPG",
+        "Cyberpunk",
+        "Action"
+      ],
+      "downloadCount": 387346,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_054",
+      "title": "Lost Zone",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 94,
+      "rating": 4.4,
+      "tags": [
+        "Retro",
+        "Strategy",
+        "2D"
+      ],
+      "downloadCount": 445664,
+      "isHot": true,
+      "isNew": true,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_055",
+      "title": "Dragon Strike",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 982,
+      "rating": 4.3,
+      "tags": [
+        "Survival",
+        "Horror",
+        "Real-time"
+      ],
+      "downloadCount": 435244,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_056",
+      "title": "Hidden Origins",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2530,
+      "rating": 4.3,
+      "tags": [
+        "Puzzle",
+        "2D",
+        "Fantasy"
+      ],
+      "downloadCount": 313904,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_057",
+      "title": "Secret Zone",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1937,
+      "rating": 3.5,
+      "tags": [
+        "Indie",
+        "Racing",
+        "Roguelike"
+      ],
+      "downloadCount": 290220,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_058",
+      "title": "Sun World",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1175,
+      "rating": 3.9,
+      "tags": [
+        "Pixel Art",
+        "Singleplayer",
+        "Shooter"
+      ],
+      "downloadCount": 292475,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_059",
+      "title": "Void Strike",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2111,
+      "rating": 4.9,
+      "tags": [
+        "Fighting",
+        "2D",
+        "Story Rich"
+      ],
+      "downloadCount": 492871,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_060",
+      "title": "Pixel Hero",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 4016,
+      "rating": 4.7,
+      "tags": [
+        "Pixel Art",
+        "Sci-Fi",
+        "Racing"
+      ],
+      "downloadCount": 391490,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_061",
+      "title": "Neon Wars",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3772,
+      "rating": 3.8,
+      "tags": [
+        "Story Rich",
+        "Fighting",
+        "Sports"
+      ],
+      "downloadCount": 186574,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_062",
+      "title": "Dark Origins",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1653,
+      "rating": 4.8,
+      "tags": [
+        "Indie",
+        "Simulation",
+        "Survival"
+      ],
+      "downloadCount": 451529,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_063",
+      "title": "Star Wars",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2152,
+      "rating": 3.8,
+      "tags": [
+        "Puzzle",
+        "2D",
+        "Simulation"
+      ],
+      "downloadCount": 280767,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_064",
+      "title": "Crystal Galaxy",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3304,
+      "rating": 4,
+      "tags": [
+        "Roguelike",
+        "Retro",
+        "Adventure"
+      ],
+      "downloadCount": 466779,
+      "isHot": false,
+      "isNew": true,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_065",
+      "title": "Neon Arena",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1247,
+      "rating": 4.6,
+      "tags": [
+        "Racing",
+        "Pixel Art",
+        "Sci-Fi"
+      ],
+      "downloadCount": 72541,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_066",
+      "title": "Phoenix Island",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 4998,
+      "rating": 4.7,
+      "tags": [
+        "Atmospheric",
+        "Pixel Art",
+        "Retro"
+      ],
+      "downloadCount": 475393,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_067",
+      "title": "Shadow World",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 4843,
+      "rating": 3.7,
+      "tags": [
+        "3D",
+        "Puzzle",
+        "Roguelike"
+      ],
+      "downloadCount": 479770,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_068",
+      "title": "Secret Dimension",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1829,
+      "rating": 4.1,
+      "tags": [
+        "Multiplayer",
+        "Minimalist",
+        "Puzzle"
+      ],
+      "downloadCount": 436127,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_069",
+      "title": "Dragon Strike",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2328,
+      "rating": 4.1,
+      "tags": [
+        "Shooter",
+        "Singleplayer",
+        "RPG"
+      ],
+      "downloadCount": 126152,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_070",
+      "title": "Void Hero",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1154,
+      "rating": 4.4,
+      "tags": [
+        "Pixel Art",
+        "Turn-based",
+        "Simulation"
+      ],
+      "downloadCount": 426383,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_071",
+      "title": "Mystic Adventure",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1554,
+      "rating": 4.1,
+      "tags": [
+        "Turn-based",
+        "Roguelike",
+        "Shooter"
+      ],
+      "downloadCount": 487348,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_072",
+      "title": "Storm Arena",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1030,
+      "rating": 4.9,
+      "tags": [
+        "Multiplayer",
+        "Roguelike",
+        "2D"
+      ],
+      "downloadCount": 231651,
+      "isHot": false,
+      "isNew": true,
+      "isOnSale": true,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_073",
+      "title": "Ancient Realm",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2104,
+      "rating": 4.6,
+      "tags": [
+        "Multiplayer",
+        "Turn-based",
+        "Fantasy"
+      ],
+      "downloadCount": 350444,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_074",
+      "title": "Hidden Empire",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 734,
+      "rating": 4.6,
+      "tags": [
+        "Roguelike",
+        "Action",
+        "Sports"
+      ],
+      "downloadCount": 486882,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_075",
+      "title": "Phoenix Destiny",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 772,
+      "rating": 4.5,
+      "tags": [
+        "Action",
+        "Real-time",
+        "Singleplayer"
+      ],
+      "downloadCount": 427392,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_076",
+      "title": "Lost Force",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3028,
+      "rating": 4.4,
+      "tags": [
+        "Retro",
+        "Real-time",
+        "Strategy"
+      ],
+      "downloadCount": 198847,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_077",
+      "title": "Phoenix Saga",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2506,
+      "rating": 4.8,
+      "tags": [
+        "RPG",
+        "Platformer",
+        "Horror"
+      ],
+      "downloadCount": 334233,
+      "isHot": false,
+      "isNew": true,
+      "isOnSale": true,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_078",
+      "title": "Phoenix Island",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3597,
+      "rating": 4.4,
+      "tags": [
+        "Adventure",
+        "Survival",
+        "Retro"
+      ],
+      "downloadCount": 451223,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_079",
+      "title": "Ice City",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1832,
+      "rating": 4.7,
+      "tags": [
+        "Cyberpunk",
+        "Real-time",
+        "RPG"
+      ],
+      "downloadCount": 456126,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_080",
+      "title": "Mystic Island",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 4403,
+      "rating": 4.1,
+      "tags": [
+        "Simulation",
+        "3D",
+        "Horror"
+      ],
+      "downloadCount": 406717,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_081",
+      "title": "Storm Tales",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 658,
+      "rating": 4.1,
+      "tags": [
+        "Platformer",
+        "2D",
+        "Action"
+      ],
+      "downloadCount": 84985,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_082",
+      "title": "Light Island",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3145,
+      "rating": 4.9,
+      "tags": [
+        "Retro",
+        "Singleplayer",
+        "Indie"
+      ],
+      "downloadCount": 75406,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_083",
+      "title": "Fire Zone",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1345,
+      "rating": 4.2,
+      "tags": [
+        "Strategy",
+        "Sports",
+        "Horror"
+      ],
+      "downloadCount": 11921,
+      "isHot": false,
+      "isNew": true,
+      "isOnSale": true,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_084",
+      "title": "Crystal Adventure",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 616,
+      "rating": 4.1,
+      "tags": [
+        "Strategy",
+        "Action",
+        "Horror"
+      ],
+      "downloadCount": 298516,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_085",
+      "title": "Earth Strike",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 4367,
+      "rating": 4.6,
+      "tags": [
+        "Fantasy",
+        "Roguelike",
+        "Puzzle"
+      ],
+      "downloadCount": 418053,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_086",
+      "title": "Mystic City",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2272,
+      "rating": 3.9,
+      "tags": [
+        "Sci-Fi",
+        "Pixel Art",
+        "Adventure"
+      ],
+      "downloadCount": 188366,
+      "isHot": false,
+      "isNew": true,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_087",
+      "title": "Void Origins",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2340,
+      "rating": 3.8,
+      "tags": [
+        "Adventure",
+        "Fighting",
+        "Simulation"
+      ],
+      "downloadCount": 314610,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_088",
+      "title": "Cyber Saga",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1217,
+      "rating": 4.6,
+      "tags": [
+        "Roguelike",
+        "Real-time",
+        "Minimalist"
+      ],
+      "downloadCount": 377650,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_089",
+      "title": "Dragon Battle",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1358,
+      "rating": 4.6,
+      "tags": [
+        "Horror",
+        "2D",
+        "Fantasy"
+      ],
+      "downloadCount": 109151,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_090",
+      "title": "Wind Journey",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2221,
+      "rating": 4.3,
+      "tags": [
+        "Atmospheric",
+        "Simulation",
+        "Sci-Fi"
+      ],
+      "downloadCount": 294843,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_091",
+      "title": "Digital Master",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1658,
+      "rating": 3.6,
+      "tags": [
+        "Fighting",
+        "Racing",
+        "Horror"
+      ],
+      "downloadCount": 182443,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_092",
+      "title": "Digital City",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2551,
+      "rating": 4.3,
+      "tags": [
+        "Multiplayer",
+        "Roguelike",
+        "Survival"
+      ],
+      "downloadCount": 89854,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_093",
+      "title": "Retro City",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 855,
+      "rating": 4.3,
+      "tags": [
+        "Survival",
+        "Story Rich",
+        "Shooter"
+      ],
+      "downloadCount": 245877,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_094",
+      "title": "Wind Combat",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3690,
+      "rating": 4.5,
+      "tags": [
+        "Stealth",
+        "Action",
+        "Sci-Fi"
+      ],
+      "downloadCount": 186874,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_095",
+      "title": "Storm Legends",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1526,
+      "rating": 3.8,
+      "tags": [
+        "Retro",
+        "Simulation",
+        "Multiplayer"
+      ],
+      "downloadCount": 151917,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_096",
+      "title": "Future Wars",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2528,
+      "rating": 4.2,
+      "tags": [
+        "Multiplayer",
+        "Story Rich",
+        "Roguelike"
+      ],
+      "downloadCount": 80001,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_097",
+      "title": "Light Battle",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3596,
+      "rating": 3.7,
+      "tags": [
+        "RPG",
+        "Shooter",
+        "Sci-Fi"
+      ],
+      "downloadCount": 357855,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_098",
+      "title": "Star City",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 4651,
+      "rating": 3.6,
+      "tags": [
+        "Simulation",
+        "Stealth",
+        "Real-time"
+      ],
+      "downloadCount": 217950,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_099",
+      "title": "Earth Strike",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 4677,
+      "rating": 3.9,
+      "tags": [
+        "Platformer",
+        "Turn-based",
+        "Shooter"
+      ],
+      "downloadCount": 23078,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_100",
+      "title": "Crystal Island",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1919,
+      "rating": 3.8,
+      "tags": [
+        "Pixel Art",
+        "Multiplayer",
+        "Story Rich"
+      ],
+      "downloadCount": 177816,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_101",
+      "title": "Digital Story",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 248,
+      "rating": 4.5,
+      "tags": [
+        "Atmospheric",
+        "Multiplayer",
+        "Simulation"
+      ],
+      "downloadCount": 154106,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_102",
+      "title": "Magic Destiny",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 4387,
+      "rating": 3.9,
+      "tags": [
+        "RPG",
+        "Indie",
+        "Retro"
+      ],
+      "downloadCount": 411909,
+      "isHot": false,
+      "isNew": true,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_103",
+      "title": "Crystal Legends",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1842,
+      "rating": 4,
+      "tags": [
+        "Horror",
+        "Story Rich",
+        "RPG"
+      ],
+      "downloadCount": 200310,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_104",
+      "title": "Secret Empire",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3758,
+      "rating": 3.5,
+      "tags": [
+        "Stealth",
+        "Action",
+        "Strategy"
+      ],
+      "downloadCount": 419717,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_105",
+      "title": "Crystal Kingdom",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 1276,
+      "rating": 4.1,
+      "tags": [
+        "Racing",
+        "Strategy",
+        "Cyberpunk"
+      ],
+      "downloadCount": 156413,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": true,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_106",
+      "title": "Retro Realm",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3354,
+      "rating": 3.8,
+      "tags": [
+        "Adventure",
+        "Fantasy",
+        "Simulation"
+      ],
+      "downloadCount": 263316,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_107",
+      "title": "Crystal Saga",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 290,
+      "rating": 3.5,
+      "tags": [
+        "Survival",
+        "Turn-based",
+        "Fantasy"
+      ],
+      "downloadCount": 303210,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_108",
+      "title": "Dragon Journey",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 2605,
+      "rating": 3.7,
+      "tags": [
+        "Singleplayer",
+        "Sports",
+        "Action"
+      ],
+      "downloadCount": 14008,
+      "isHot": false,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_109",
+      "title": "Dragon Master",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 3296,
+      "rating": 4.4,
+      "tags": [
+        "Survival",
+        "Racing",
+        "Story Rich"
+      ],
+      "downloadCount": 220778,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": false,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    },
+    {
+      "id": "game_110",
+      "title": "Sun City",
+      "coverImage": "/api/placeholder/315/250",
+      "price": 712,
+      "rating": 4.9,
+      "tags": [
+        "Stealth",
+        "Multiplayer",
+        "Singleplayer"
+      ],
+      "downloadCount": 138215,
+      "isHot": true,
+      "isNew": false,
+      "isOnSale": false,
+      "isAiRecommended": true,
+      "media": {
+        "coverImage": "/api/placeholder/400/300",
+        "screenshots": [
+          "/api/placeholder/800/600"
+        ],
+        "iconUrl": "/api/placeholder/64/64"
+      }
+    }
+  ]
+}

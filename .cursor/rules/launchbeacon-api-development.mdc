@@ -1,0 +1,435 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# LaunchBeacon Gaming API Development
+
+## Core API Philosophy
+
+**BUILD THE ULTIMATE GAMING API** that surpasses Steam's capabilities by offering real-time features, AI-enhanced functionality, better developer experience, and comprehensive gaming ecosystem integration. Every endpoint must be lightning-fast, well-documented, and provide more value than existing solutions.
+
+## 🎯 API Superiority Targets
+
+### Exceed Steam's Limitations
+- **No 100,000 daily request limits** - Implement intelligent rate limiting based on usage patterns
+- **Real-time everything** - WebSocket connections for live data streams
+- **AI-enhanced responses** - Every endpoint can provide AI-generated insights
+- **Better authentication** - Modern OAuth 2.1, JWT tokens, and API key management
+- **Comprehensive coverage** - Access to ALL platform features, not just basic ones
+
+## 🏗️ API Architecture Standards
+
+### RESTful Design with Modern Enhancements
+```typescript
+// Standard LaunchBeacon API endpoint structure
+interface APIEndpoint {
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
+  path: string;
+  version: 'v1' | 'v2';
+  auth: 'none' | 'api-key' | 'oauth' | 'jwt';
+  rateLimit: {
+    requests: number;
+    window: string;
+    burst?: number;
+  };
+  realTime?: boolean;
+  aiEnhanced?: boolean;
+}
+
+// Example: Enhanced game data endpoint
+const gameEndpoint: APIEndpoint = {
+  method: 'GET',
+  path: '/api/v2/games/{gameId}',
+  auth: 'api-key',
+  rateLimit: { requests: 1000, window: '1m', burst: 50 },
+  realTime: true,
+  aiEnhanced: true
+};
+```
+
+### WebSocket Integration
+```typescript
+// Real-time game events via WebSocket
+interface GameEventStream {
+  channel: `game:${string}`;
+  events: [
+    'player_joined',
+    'achievement_unlocked', 
+    'leaderboard_updated',
+    'mod_installed',
+    'review_posted'
+  ];
+  authentication: 'jwt' | 'api-key';
+  filters?: Record<string, any>;
+}
+```
+
+## 📊 Superior API Feature Set
+
+### 1. Enhanced User & Social APIs
+```typescript
+// Beyond Steam's basic user API
+interface LaunchBeaconUserAPI {
+  // Basic user data (like Steam)
+  '/api/v2/users/{userId}': UserProfile;
+  '/api/v2/users/{userId}/friends': UserFriends;
+  
+  // Advanced social features (beyond Steam)
+  '/api/v2/users/{userId}/activity-feed': RealTimeActivityFeed;
+  '/api/v2/users/{userId}/gaming-preferences': AIGeneratedPreferences;
+  '/api/v2/users/{userId}/recommendations': AIGameRecommendations;
+  '/api/v2/users/{userId}/social-graph': DetailedSocialConnections;
+  '/api/v2/users/{userId}/cross-platform-presence': MultiPlatformStatus;
+}
+```
+
+### 2. Advanced Achievement System
+```typescript
+// Revolutionary achievement system
+interface LaunchBeaconAchievements {
+  // Standard achievements
+  '/api/v2/games/{gameId}/achievements': GameAchievements;
+  '/api/v2/users/{userId}/achievements': UserAchievements;
+  
+  // Advanced features Steam lacks
+  '/api/v2/achievements/dynamic': AIGeneratedAchievements;
+  '/api/v2/achievements/cross-game': CrossGameAchievements;
+  '/api/v2/achievements/community': CommunityCreatedAchievements;
+  '/api/v2/achievements/real-time-progress': LiveProgressTracking;
+  '/api/v2/achievements/social-impact': SocialAchievementEffects;
+}
+
+interface AIGeneratedAchievement {
+  id: string;
+  title: string;
+  description: string;
+  difficulty: 'easy' | 'medium' | 'hard' | 'legendary';
+  generatedBy: 'ai' | 'developer' | 'community';
+  personalizedFor?: string; // User ID for personalized achievements
+  crossGameCompatible: boolean;
+  realTimeTracking: boolean;
+  socialElements: {
+    shareEnabled: boolean;
+    celebrationEffects: string[];
+    leaderboardImpact: number;
+  };
+}
+```
+
+### 3. Intelligent Game Discovery
+```typescript
+// AI-powered discovery beyond Steam's basic recommendations
+interface LaunchBeaconDiscoveryAPI {
+  '/api/v2/discovery/personalized': AIPersonalizedRecommendations;
+  '/api/v2/discovery/trending': RealTimeTrendingGames;
+  '/api/v2/discovery/similar/{gameId}': AdvancedSimilarGames;
+  '/api/v2/discovery/mood-based': MoodBasedRecommendations;
+  '/api/v2/discovery/social-influence': FriendInfluencedRecommendations;
+  '/api/v2/discovery/skill-matched': SkillLevelMatchedGames;
+}
+
+interface AIPersonalizedRecommendation {
+  gameId: string;
+  confidenceScore: number; // 0-1 AI confidence
+  reasoningExplanation: string;
+  personalizedFactors: string[];
+  estimatedPlayTime: number;
+  matchingPreferences: string[];
+  aiGeneratedTags: string[];
+  predictedRating: number;
+}
+```
+
+### 4. Advanced Analytics & Insights
+```typescript
+// Developer analytics far beyond Steam's offerings
+interface LaunchBeaconAnalyticsAPI {
+  // Real-time game metrics
+  '/api/v2/analytics/games/{gameId}/real-time': RealTimeGameMetrics;
+  '/api/v2/analytics/games/{gameId}/player-behavior': PlayerBehaviorInsights;
+  '/api/v2/analytics/games/{gameId}/ai-insights': AIGeneratedInsights;
+  
+  // Advanced player analytics
+  '/api/v2/analytics/players/cohort-analysis': CohortAnalysis;
+  '/api/v2/analytics/players/churn-prediction': ChurnPredictionModel;
+  '/api/v2/analytics/players/ltv-calculation': LifetimeValueCalculation;
+  
+  // Market intelligence
+  '/api/v2/analytics/market/competitive-analysis': CompetitiveIntelligence;
+  '/api/v2/analytics/market/pricing-optimization': AIPricingRecommendations;
+}
+```
+
+### 5. Revolutionary Mod Ecosystem
+```typescript
+// Next-generation modding API
+interface LaunchBeaconModAPI {
+  // Basic mod management
+  '/api/v2/mods/{gameId}': GameMods;
+  '/api/v2/mods/{modId}/install': ModInstallation;
+  
+  // Advanced modding features
+  '/api/v2/mods/compatibility-check': AICompatibilityAnalysis;
+  '/api/v2/mods/auto-installer': IntelligentModInstaller;
+  '/api/v2/mods/dependency-resolver': SmartDependencyManagement;
+  '/api/v2/mods/conflict-detection': ModConflictPrevention;
+  '/api/v2/mods/performance-impact': ModPerformanceAnalysis;
+  '/api/v2/mods/community-curation': CommunityModCuration;
+}
+```
+
+## 🚀 AI-Enhanced API Features
+
+### Every Endpoint Gets AI Superpowers
+```typescript
+// AI enhancement wrapper for all API responses
+interface AIEnhancedResponse<T> {
+  data: T;
+  aiInsights?: {
+    summary: string;
+    recommendations: string[];
+    patterns: string[];
+    predictions: any;
+    confidence: number;
+  };
+  aiGenerated?: {
+    tags: string[];
+    categories: string[];
+    similarItems: string[];
+    marketingCopy: string;
+  };
+}
+
+// Example: AI-enhanced game data
+interface AIEnhancedGameData extends Game {
+  aiAnalysis: {
+    genreClassification: string[];
+    difficultyAssessment: 'beginner' | 'intermediate' | 'expert';
+    timeCommitmentEstimate: string;
+    skillRequirements: string[];
+    emotionalTone: string[];
+    targetAudience: string[];
+  };
+  aiRecommendations: {
+    similarGames: GameRecommendation[];
+    complementaryGames: GameRecommendation[];
+    nextGameSuggestions: GameRecommendation[];
+  };
+}
+```
+
+## 🔒 Advanced Security & Authentication
+
+### Multi-Tier Authentication System
+```typescript
+// Authentication levels beyond simple API keys
+interface LaunchBeaconAuth {
+  // Public access (rate limited)
+  public: {
+    rateLimit: '1000/hour';
+    features: ['basic game info', 'public leaderboards'];
+  };
+  
+  // Developer API key
+  developer: {
+    rateLimit: '10000/hour';
+    features: ['full game data', 'user analytics', 'mod management'];
+    scopes: string[];
+  };
+  
+  // OAuth for end users
+  oauth: {
+    rateLimit: '5000/hour';
+    features: ['user data', 'social features', 'personalized content'];
+    permissions: string[];
+  };
+  
+  // Partner access (high-volume developers)
+  partner: {
+    rateLimit: 'unlimited';
+    features: ['all endpoints', 'real-time streams', 'ai features'];
+    priority: 'high';
+  };
+}
+```
+
+## 📈 Performance & Reliability Standards
+
+### Sub-50ms Response Times
+```typescript
+// Performance requirements for all endpoints
+interface PerformanceTargets {
+  responseTime: {
+    p50: '< 25ms';
+    p95: '< 50ms';  
+    p99: '< 100ms';
+  };
+  availability: '99.99%';
+  throughput: '> 100k RPS';
+  caching: {
+    strategy: 'intelligent-edge-caching';
+    ttl: 'dynamic-based-on-data-type';
+    invalidation: 'real-time';
+  };
+}
+```
+
+### Global CDN & Edge Computing
+- **Edge API deployment** across 50+ global locations
+- **Smart routing** based on user location and API endpoint
+- **Real-time cache invalidation** for live data
+- **Progressive API responses** for complex queries
+
+## 🛠️ Developer Experience Excellence
+
+### Best-in-Class API Documentation
+```typescript
+// Interactive API documentation requirements
+interface APIDocumentation {
+  format: 'OpenAPI 3.1';
+  features: [
+    'interactive-playground',
+    'code-generation',
+    'real-time-examples',
+    'ai-powered-explanations',
+    'use-case-tutorials',
+    'error-troubleshooting'
+  ];
+  languages: string[]; // 20+ programming languages
+  sdks: {
+    javascript: '@launchbeacon/js-sdk';
+    python: 'launchbeacon-python';
+    rust: 'launchbeacon-rust';
+    csharp: 'LaunchBeacon.NET';
+    // ... more SDKs
+  };
+}
+```
+
+### Intelligent Rate Limiting
+```typescript
+// Smart rate limiting beyond simple request counts
+interface IntelligentRateLimit {
+  algorithm: 'adaptive-sliding-window';
+  factors: [
+    'endpoint-complexity',
+    'user-tier',
+    'historical-usage',
+    'resource-consumption',
+    'time-of-day',
+    'global-load'
+  ];
+  burstAllowance: 'dynamic';
+  gracefulDegradation: true;
+  predictiveScaling: true;
+}
+```
+
+## 🎮 Gaming-Specific API Features
+
+### Real-Time Multiplayer Support
+```typescript
+// WebSocket APIs for real-time gaming
+interface RealTimeGamingAPI {
+  '/ws/games/{gameId}/lobby': GameLobbyManagement;
+  '/ws/games/{gameId}/matchmaking': IntelligentMatchmaking;
+  '/ws/games/{gameId}/spectate': LiveGameSpectating;
+  '/ws/users/{userId}/presence': RealTimePresence;
+  '/ws/social/chat/{channelId}': EnhancedChatSystem;
+}
+
+interface IntelligentMatchmaking {
+  skillBasedMatching: boolean;
+  latencyOptimization: boolean;
+  teamBalancing: boolean;
+  aiPlayerBehaviorAnalysis: boolean;
+  toxicityFiltering: boolean;
+  crossPlatformSupport: boolean;
+}
+```
+
+### Advanced Leaderboards
+```typescript
+// Leaderboard system that puts Steam to shame
+interface LaunchBeaconLeaderboards {
+  '/api/v2/leaderboards/{gameId}/global': GlobalLeaderboard;
+  '/api/v2/leaderboards/{gameId}/friends': FriendsLeaderboard;
+  '/api/v2/leaderboards/{gameId}/regional': RegionalLeaderboard;
+  '/api/v2/leaderboards/{gameId}/seasonal': SeasonalLeaderboard;
+  '/api/v2/leaderboards/{gameId}/skill-based': SkillBasedLeaderboard;
+  '/api/v2/leaderboards/{gameId}/real-time': LiveLeaderboardUpdates;
+}
+```
+
+## 🔄 Integration Requirements
+
+### Seamless Platform Integration
+```typescript
+// Integration with LaunchBeacon platform components
+interface PlatformIntegration {
+  webApp: {
+    endpoints: 'embed in [apps/web](mdc:apps/web) pages';
+    authentication: 'NextAuth.js integration';
+    caching: 'Next.js ISR + Edge caching';
+  };
+  
+  desktopApp: {
+    endpoints: 'Tauri command integration in [apps/desktop](mdc:apps/desktop)';
+    authentication: 'Token-based auth';
+    offline: 'Local caching with sync';
+  };
+  
+  ai: {
+    enhancement: 'AI insights on all endpoints';
+    generation: 'AI-generated content and recommendations';
+    analysis: 'Predictive analytics and insights';
+  };
+}
+```
+
+## 📋 API Development Checklist
+
+Before deploying any API endpoint:
+- [ ] **Performance tested** (< 50ms response time)
+- [ ] **AI enhancement** integrated where applicable
+- [ ] **Real-time capability** added if beneficial
+- [ ] **Comprehensive documentation** with examples
+- [ ] **SDKs updated** for all supported languages
+- [ ] **Rate limiting** configured intelligently
+- [ ] **Security audit** completed
+- [ ] **Error handling** covers all edge cases
+- [ ] **Monitoring & alerting** set up
+- [ ] **Backwards compatibility** maintained
+- [ ] **OpenAPI specification** updated
+
+## 🚀 Implementation Roadmap
+
+### Phase 1: Core Gaming APIs
+- User management and social features
+- Game catalog and discovery
+- Basic achievement system
+- Developer analytics
+
+### Phase 2: Advanced Features  
+- Real-time multiplayer support
+- AI-enhanced recommendations
+- Advanced mod ecosystem
+- Intelligent rate limiting
+
+### Phase 3: Next-Generation Features
+- Predictive gaming analytics
+- Cross-platform presence
+- Community-driven features
+- AI-generated content
+
+## 📊 Success Metrics
+
+### API Adoption Targets
+- **Developer signups**: > 10,000 in first year
+- **API calls**: > 1 billion monthly
+- **Response time**: < 25ms average
+- **Uptime**: > 99.99%
+- **Developer satisfaction**: > 9.5/10
+
+**Remember: We're not just building an API - we're creating the developer platform that will power the next generation of gaming experiences.**

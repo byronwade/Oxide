@@ -1,0 +1,441 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# LaunchBeacon API Testing & Quality Standards
+
+## Core Testing Philosophy
+
+**ZERO-COMPROMISE TESTING** - Every API endpoint must be rigorously tested for performance, reliability, security, and user experience. Testing is not optional; it's the foundation that ensures we deliver the world-class gaming API that surpasses Steam.
+
+## 🎯 Testing Requirements Hierarchy
+
+### Mandatory Testing Levels
+1. **Unit Tests** - Every function, every edge case
+2. **Integration Tests** - API endpoints with real dependencies  
+3. **Performance Tests** - Sub-50ms response time validation
+4. **Security Tests** - Authentication, authorization, rate limiting
+5. **AI Feature Tests** - ML model accuracy and performance
+6. **Cross-Platform Tests** - Web and desktop integration
+7. **Load Tests** - 100k+ RPS capacity verification
+
+## 🧪 Unit Testing Standards
+
+### Complete Code Coverage Requirements
+```typescript
+// Every API handler must have comprehensive unit tests
+describe('Game Discovery API', () => {
+  describe('GET /api/v2/discovery/personalized', () => {
+    // Test successful responses
+    it('should return personalized recommendations for authenticated user', async () => {
+      // Test implementation
+    });
+    
+    // Test edge cases
+    it('should handle users with no gaming history', async () => {
+      // Test implementation
+    });
+    
+    // Test AI features
+    it('should include AI confidence scores above 0.7', async () => {
+      // Test implementation  
+    });
+    
+    // Test performance
+    it('should respond within 25ms for cached requests', async () => {
+      // Test implementation
+    });
+    
+    // Test error handling
+    it('should return proper error codes for invalid user IDs', async () => {
+      // Test implementation
+    });
+  });
+});
+```
+
+### AI Feature Testing
+```typescript
+// Testing AI-enhanced endpoints
+describe('AI Achievement Generation', () => {
+  it('should generate contextually relevant achievements', async () => {
+    const userGameHistory = mockUserHistory;
+    const achievements = await generateAIAchievements(userGameHistory);
+    
+    expect(achievements.every(a => a.confidenceScore > 0.8)).toBe(true);
+    expect(achievements.length).toBeGreaterThan(0);
+    expect(achievements[0].difficulty).toBeDefined();
+  });
+  
+  it('should not generate duplicate achievements', async () => {
+    const achievements = await generateAIAchievements(mockUserHistory);
+    const uniqueIds = new Set(achievements.map(a => a.id));
+    
+    expect(uniqueIds.size).toBe(achievements.length);
+  });
+});
+```
+
+## ⚡ Performance Testing Requirements
+
+### Response Time Validation
+```typescript
+// Performance test suite for all endpoints
+describe('API Performance Standards', () => {
+  const performanceTargets = {
+    p50: 25, // 25ms 50th percentile
+    p95: 50, // 50ms 95th percentile  
+    p99: 100 // 100ms 99th percentile
+  };
+  
+  beforeEach(() => {
+    // Clear caches to test real performance
+    jest.clearAllMocks();
+  });
+  
+  it('should meet p50 response time targets', async () => {
+    const times: number[] = [];
+    
+    for (let i = 0; i < 100; i++) {
+      const start = performance.now();
+      await api.get('/api/v2/games/popular');
+      const end = performance.now();
+      times.push(end - start);
+    }
+    
+    const p50 = calculatePercentile(times, 50);
+    expect(p50).toBeLessThan(performanceTargets.p50);
+  });
+});
+```
+
+### Load Testing Configuration
+```typescript
+// Load testing with realistic gaming traffic patterns
+interface LoadTestConfig {
+  endpoint: string;
+  concurrent: number;
+  duration: string;
+  expectedThroughput: number;
+  successRate: number;
+}
+
+const loadTests: LoadTestConfig[] = [
+  {
+    endpoint: '/api/v2/games/{gameId}',
+    concurrent: 1000,
+    duration: '5m',
+    expectedThroughput: 10000, // RPS
+    successRate: 99.9
+  },
+  {
+    endpoint: '/api/v2/discovery/personalized',
+    concurrent: 500,
+    duration: '10m', 
+    expectedThroughput: 2000,
+    successRate: 99.5
+  }
+];
+```
+
+## 🔒 Security Testing Requirements
+
+### Authentication & Authorization Tests
+```typescript
+describe('API Security', () => {
+  describe('Authentication', () => {
+    it('should reject requests without valid API keys', async () => {
+      const response = await request(app)
+        .get('/api/v2/users/123/profile')
+        .expect(401);
+        
+      expect(response.body.error).toBe('Invalid API key');
+    });
+    
+    it('should enforce rate limiting per API key', async () => {
+      const apiKey = 'test-key';
+      const requests = Array(1001).fill(null).map(() => 
+        request(app)
+          .get('/api/v2/games/popular')
+          .set('X-API-Key', apiKey)
+      );
+      
+      const responses = await Promise.all(requests);
+      const rateLimited = responses.filter(r => r.status === 429);
+      
+      expect(rateLimited.length).toBeGreaterThan(0);
+    });
+  });
+  
+  describe('Data Protection', () => {
+    it('should not expose sensitive user data in API responses', async () => {
+      const response = await request(app)
+        .get('/api/v2/users/123/profile')
+        .set('X-API-Key', validApiKey);
+        
+      expect(response.body).not.toHaveProperty('password');
+      expect(response.body).not.toHaveProperty('email');
+      expect(response.body).not.toHaveProperty('paymentInfo');
+    });
+  });
+});
+```
+
+### SQL Injection & XSS Protection
+```typescript
+describe('Injection Attack Protection', () => {
+  it('should prevent SQL injection in search endpoints', async () => {
+    const maliciousQuery = "'; DROP TABLE games; --";
+    
+    const response = await request(app)
+      .get(`/api/v2/games/search?q=${encodeURIComponent(maliciousQuery)}`)
+      .set('X-API-Key', validApiKey)
+      .expect(400);
+      
+    expect(response.body.error).toContain('Invalid search query');
+  });
+  
+  it('should sanitize user-generated content', async () => {
+    const xssPayload = '<script>alert("xss")</script>';
+    
+    const response = await request(app)
+      .post('/api/v2/games/123/reviews')
+      .send({ content: xssPayload })
+      .set('X-API-Key', validApiKey);
+      
+    expect(response.body.content).not.toContain('<script>');
+  });
+});
+```
+
+## 🤖 AI Feature Testing Standards
+
+### Machine Learning Model Validation
+```typescript
+describe('AI Model Performance', () => {
+  describe('Game Recommendation Engine', () => {
+    it('should achieve minimum accuracy thresholds', async () => {
+      const testDataset = await loadTestDataset();
+      const predictions = await runRecommendationModel(testDataset);
+      
+      const accuracy = calculateAccuracy(predictions, testDataset.labels);
+      expect(accuracy).toBeGreaterThan(0.85); // 85% minimum accuracy
+    });
+    
+    it('should provide diverse recommendations', async () => {
+      const recommendations = await getRecommendations('user123');
+      const genres = recommendations.map(r => r.genre);
+      const uniqueGenres = new Set(genres);
+      
+      // Should recommend games from at least 3 different genres
+      expect(uniqueGenres.size).toBeGreaterThanOrEqual(3);
+    });
+  });
+  
+  describe('AI Achievement Generation', () => {
+    it('should generate achievable but challenging goals', async () => {
+      const userStats = mockUserStats;
+      const achievements = await generateAchievements(userStats);
+      
+      achievements.forEach(achievement => {
+        expect(achievement.difficulty).toMatch(/easy|medium|hard|legendary/);
+        expect(achievement.estimatedCompletionTime).toBeGreaterThan(0);
+      });
+    });
+  });
+});
+```
+
+## 🌐 Cross-Platform Integration Testing
+
+### Web App Integration ([apps/web](mdc:apps/web))
+```typescript
+describe('Web App API Integration', () => {
+  it('should work with Next.js Server Components', async () => {
+    // Test server-side API calls
+    const gameData = await fetchGameData('123');
+    expect(gameData).toBeDefined();
+    expect(gameData.id).toBe('123');
+  });
+  
+  it('should handle client-side API calls with proper error boundaries', async () => {
+    // Test client-side error handling
+    const wrapper = render(
+      <ErrorBoundary>
+        <GameComponent gameId="invalid" />
+      </ErrorBoundary>
+    );
+    
+    await waitFor(() => {
+      expect(wrapper.getByText(/error loading game/i)).toBeInTheDocument();
+    });
+  });
+});
+```
+
+### Desktop App Integration ([apps/desktop](mdc:apps/desktop))  
+```typescript
+describe('Desktop App API Integration', () => {
+  it('should work with Tauri commands', async () => {
+    // Test Rust backend API integration
+    const games = await invoke('fetch_user_games', { userId: '123' });
+    expect(Array.isArray(games)).toBe(true);
+  });
+  
+  it('should handle offline mode gracefully', async () => {
+    // Simulate offline state
+    mockNetworkOffline();
+    
+    const cachedGames = await invoke('get_cached_games');
+    expect(cachedGames.length).toBeGreaterThan(0);
+  });
+});
+```
+
+## 📊 Real-Time Feature Testing
+
+### WebSocket Connection Testing
+```typescript
+describe('Real-Time Features', () => {
+  it('should establish WebSocket connections for live events', async () => {
+    const socket = new WebSocket('ws://localhost:3000/ws/games/123/events');
+    
+    await new Promise(resolve => {
+      socket.onopen = resolve;
+    });
+    
+    expect(socket.readyState).toBe(WebSocket.OPEN);
+    socket.close();
+  });
+  
+  it('should broadcast achievement unlocks in real-time', async () => {
+    const socket = mockWebSocket('/ws/games/123/events');
+    
+    // Trigger achievement unlock
+    await unlockAchievement('user123', 'achievement456');
+    
+    // Verify broadcast
+    expect(socket.lastMessage).toMatchObject({
+      type: 'achievement_unlocked',
+      userId: 'user123',
+      achievementId: 'achievement456'
+    });
+  });
+});
+```
+
+## 🎯 API Documentation Testing
+
+### OpenAPI Specification Validation
+```typescript
+describe('API Documentation', () => {
+  it('should have valid OpenAPI 3.1 specification', async () => {
+    const spec = await loadOpenAPISpec();
+    const validation = await validateOpenAPISpec(spec);
+    
+    expect(validation.errors).toHaveLength(0);
+    expect(spec.openapi).toBe('3.1.0');
+  });
+  
+  it('should have examples for all endpoints', async () => {
+    const spec = await loadOpenAPISpec();
+    
+    Object.values(spec.paths).forEach((pathItem: any) => {
+      Object.values(pathItem).forEach((operation: any) => {
+        if (operation.responses) {
+          Object.values(operation.responses).forEach((response: any) => {
+            expect(response.content?.['application/json']?.examples).toBeDefined();
+          });
+        }
+      });
+    });
+  });
+});
+```
+
+## 🔄 Continuous Testing Pipeline
+
+### Pre-Deployment Testing Gates
+```typescript
+// Required tests that must pass before any deployment
+const deploymentGates = {
+  unitTests: {
+    coverage: '>= 95%',
+    passing: '100%'
+  },
+  integrationTests: {
+    passing: '100%'
+  },
+  performanceTests: {
+    p50ResponseTime: '<= 25ms',
+    p95ResponseTime: '<= 50ms',
+    throughput: '>= 100k RPS'
+  },
+  securityTests: {
+    vulnerabilities: '0 high, 0 critical',
+    authentication: '100% passing'
+  },
+  aiTests: {
+    modelAccuracy: '>= 85%',
+    biasDetection: 'passing'
+  }
+};
+```
+
+### Automated Testing Schedule
+- **On every commit**: Unit tests, lint, type checking
+- **On PR creation**: Full integration test suite
+- **Daily**: Performance benchmarks, security scans
+- **Weekly**: Load testing, AI model validation
+- **Pre-release**: Complete end-to-end testing suite
+
+## 📈 Test Metrics & Monitoring
+
+### Required Test Coverage
+```typescript
+const coverageRequirements = {
+  overall: 95,
+  endpoints: 100,    // Every API endpoint must be tested
+  edgeCases: 90,     // Error conditions, boundary values
+  aiFeatures: 85,    // ML models and AI enhancements
+  security: 100,     // Auth, validation, sanitization
+  performance: 100   // Response time validation
+};
+```
+
+### Testing Quality Gates
+- **Flaky test tolerance**: 0% (no flaky tests allowed)
+- **Test execution time**: < 10 minutes for full suite
+- **Regression detection**: 100% for breaking changes
+- **Performance regression**: Alert on >10% degradation
+
+## 🚨 Testing Best Practices
+
+### Data Management
+- **Use test databases** - Never test against production data
+- **Seed consistent data** - Reproducible test scenarios
+- **Clean up after tests** - No test pollution
+- **Mock external services** - Reliable, fast testing
+
+### AI Testing Specifics
+- **Test with diverse datasets** - Avoid bias and edge cases
+- **Validate confidence scores** - Ensure AI isn't overconfident
+- **Test model fallbacks** - What happens when AI fails?
+- **Monitor model drift** - Performance degradation over time
+
+## ✅ Testing Checklist
+
+Before any API endpoint goes live:
+- [ ] **Unit tests** written with >95% coverage
+- [ ] **Integration tests** cover all user scenarios  
+- [ ] **Performance tests** validate <50ms response times
+- [ ] **Security tests** prevent common vulnerabilities
+- [ ] **AI features** tested for accuracy and bias
+- [ ] **Cross-platform** compatibility verified
+- [ ] **Error handling** covers all failure modes
+- [ ] **Documentation** includes working examples
+- [ ] **Load testing** validates throughput targets
+- [ ] **Monitoring** alerts configured
+
+**Remember: Testing isn't just about finding bugs - it's about guaranteeing that we deliver the most reliable, performant, and secure gaming API ever built.**
