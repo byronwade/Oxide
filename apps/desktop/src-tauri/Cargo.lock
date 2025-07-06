@@ -2045,31 +2045,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "launchbeacon-desktop"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "chrono",
- "cocoa",
- "dirs 5.0.1",
- "futures-util",
- "lazy_static",
- "objc",
- "reqwest",
- "serde",
- "serde_json",
- "tantivy",
- "tauri",
- "tauri-build",
- "tauri-plugin-shell",
- "thiserror 2.0.12",
- "tokio",
- "tokio-stream",
- "windows 0.58.0",
- "zip",
-]
-
-[[package]]
 name = "lazy_static"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2787,6 +2762,31 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c3a059efb063b8f425b948e042e6b9bd85edfe60e913630ed727b23e2dfcc558"
 dependencies = [
  "stable_deref_trait",
+]
+
+[[package]]
+name = "oxide-desktop"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "cocoa",
+ "dirs 5.0.1",
+ "futures-util",
+ "lazy_static",
+ "objc",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "tantivy",
+ "tauri",
+ "tauri-build",
+ "tauri-plugin-shell",
+ "thiserror 2.0.12",
+ "tokio",
+ "tokio-stream",
+ "windows 0.58.0",
+ "zip",
 ]
 
 [[package]]

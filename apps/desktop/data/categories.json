@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "version": "1.1.0",
+    "lastUpdated": "2025-06-30T00:03:55.466Z",
+    "totalCount": 20,
+    "apiVersion": "v2",
+    "cacheExpiry": 300
+  },
+  "data": [
+    {
+      "id": "306abbcb-b540-4746-a0bd-40c40820406d",
+      "slug": "beauty",
+      "name": "Beauty",
+      "description": "Confero somniculosus capto.",
+      "image": "/images/categories/beauty.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "f5ac163c-902b-4cbd-a82d-9f6197830e05",
+      "slug": "baby",
+      "name": "Baby",
+      "description": "Pauper cunae vester tunc.",
+      "image": "/images/categories/baby.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "515dae8f-e6b7-4cc4-b7ef-6d5b16ae1827",
+      "slug": "sports",
+      "name": "Sports",
+      "description": "Expedita iure audacia auctus commodi despecto a copia nostrum quas.",
+      "image": "/images/categories/sports.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "7140afd7-1f31-44aa-a229-2cb1a4c14053",
+      "slug": "industrial",
+      "name": "Industrial",
+      "description": "Terra alter trepide cibo colligo ciminatio.",
+      "image": "/images/categories/industrial.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "ff1ef229-83c1-496d-909d-f706df456410",
+      "slug": "beauty",
+      "name": "Beauty",
+      "description": "Conduco vestrum optio facilis termes basium vilis arto.",
+      "image": "/images/categories/beauty.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "16d44f6b-aac5-4de2-9467-04561cb868d9",
+      "slug": "kids",
+      "name": "Kids",
+      "description": "Iusto carbo cruciamentum esse canto temeritas perferendis cavus.",
+      "image": "/images/categories/kids.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "8bab6300-e98f-4aad-8dd4-feb433f22fc6",
+      "slug": "grocery",
+      "name": "Grocery",
+      "description": "Cunabula dapifer tergeo defluo desidero cedo.",
+      "image": "/images/categories/grocery.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "59c3d8a6-2703-4d10-81e3-1a529fae645f",
+      "slug": "sports",
+      "name": "Sports",
+      "description": "Sto viriliter voluptas sustineo somniculosus comminor optio aurum.",
+      "image": "/images/categories/sports.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "f4493fc8-0494-4d7c-845b-f98e1511bd89",
+      "slug": "automotive",
+      "name": "Automotive",
+      "description": "Territo studio cribro coniecto ter.",
+      "image": "/images/categories/automotive.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "a25e87be-8b3f-4bf2-84fa-c63f0fc00548",
+      "slug": "jewelry",
+      "name": "Jewelry",
+      "description": "Utrum ocer suadeo voluptates ubi arto ad ventus vereor exercitationem.",
+      "image": "/images/categories/jewelry.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "5e3e1f0f-ed39-443d-975a-bf9e0c70eb38",
+      "slug": "toys",
+      "name": "Toys",
+      "description": "Sono unde dapifer ceno viriliter arbor.",
+      "image": "/images/categories/toys.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "5ee15585-09b8-42b8-9733-b634a4ed7122",
+      "slug": "sports",
+      "name": "Sports",
+      "description": "Suppono hic corrigo spiculum talis.",
+      "image": "/images/categories/sports.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "6cd3f74a-bfaf-4b31-858c-18ee1a8c9fdb",
+      "slug": "games",
+      "name": "Games",
+      "description": "Commodi utpote iusto illum ubi depromo conculco vitiosus eligendi stabilis.",
+      "image": "/images/categories/games.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "09c721ab-f5aa-4147-841d-96043d6ff27c",
+      "slug": "sports",
+      "name": "Sports",
+      "description": "Conventus tamdiu contigo bonus.",
+      "image": "/images/categories/sports.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "9b2c78fa-4e1d-4b89-bb26-1bac94eb6e49",
+      "slug": "books",
+      "name": "Books",
+      "description": "Vis deinde atrocitas dedecor victus verus delego tristis dedecor eos.",
+      "image": "/images/categories/books.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "46a6f4cd-273c-4be7-935e-639a42c8611b",
+      "slug": "sports",
+      "name": "Sports",
+      "description": "Aeneus thesaurus confugo labore laborum vallum dignissimos damno.",
+      "image": "/images/categories/sports.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "7233ff7d-839b-4c18-ae45-789e5cdaac50",
+      "slug": "baby",
+      "name": "Baby",
+      "description": "Arguo supplanto thesis ciminatio aperiam triumphus delibero absum trado.",
+      "image": "/images/categories/baby.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "2614dfad-3d4c-4cda-9194-708cdc2af532",
+      "slug": "garden",
+      "name": "Garden",
+      "description": "Ut cimentarius caritas custodia.",
+      "image": "/images/categories/garden.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "e84d47dc-c88b-4b0d-ba72-8b8cc2575786",
+      "slug": "home",
+      "name": "Home",
+      "description": "Mollitia cognomen aegrotatio absconditus vinum deorsum adficio.",
+      "image": "/images/categories/home.svg",
+      "icon": "gamepad-2"
+    },
+    {
+      "id": "b4b87b28-bb26-4fbf-8aef-c93adea24c60",
+      "slug": "toys",
+      "name": "Toys",
+      "description": "Antiquus adeo tam saepe cunae aranea acsi valde nam.",
+      "image": "/images/categories/toys.svg",
+      "icon": "gamepad-2"
+    }
+  ]
+}

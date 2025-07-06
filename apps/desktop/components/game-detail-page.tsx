@@ -35,158 +35,153 @@ interface GameDetailPageProps {
 }
 
 const cyberpunkGameData = {
-  title: "Cyberpunk 2077",
-  trailerUrl: "https://cdn.v0.dev/videos/cyberpunk_trailer.mp4",
-  heroImage: "/cyberpunk-cityscape-night.png",
-  boxArt: "/placeholder.svg?height=300&width=200",
-  developer: "CD PROJEKT RED",
-  publisher: "CD PROJEKT RED",
-  releaseDate: "Dec 10, 2020",
-  tags: ["RPG", "Open World", "Cyberpunk", "Action", "Futuristic", "Sci-fi"],
-  shortDescription:
-    "An open-world, action-adventure RPG set in Night City, a megalopolis obsessed with power, glamour and body modification.",
-  reviewSummary: {
-    recent: "Mostly Positive",
-    recentCount: 8754,
-    overall: "Very Positive",
-    overallCount: 589340,
-  },
-  media: [
-    { type: "video", url: "https://cdn.v0.dev/videos/cyberpunk_trailer.mp4", thumb: "/cyberpunk-street.png" },
-    { type: "image", url: "/cyberpunk-street.png" },
-    { type: "image", url: "/neon-lit-alley.png" },
-    { type: "image", url: "/futuristic-car-chase.png" },
-    { type: "image", url: "/cybernetic-character.png" },
-  ],
-  editions: [
-    {
-      name: "Standard Edition",
-      price: 29.99,
-      originalPrice: 59.99,
-      discount: 50,
-      description: "The base game, upgraded for the next generation.",
-    },
-    {
-      name: "Ultimate Edition",
-      price: 49.99,
-      originalPrice: 89.98,
-      discount: 44,
-      description: "Includes the base game and the Phantom Liberty expansion.",
-    },
-  ],
-  dlcs: [
-    {
-      name: "Phantom Liberty",
-      price: 29.99,
-      image: "/spy-thriller-poster.png",
-      description: "A new spy-thriller adventure.",
-    },
-  ],
-  about:
-    "Cyberpunk 2077 is an open-world, action-adventure RPG set in the megalopolis of Night City, where you play as a cyberpunk mercenary wrapped up in a do-or-die fight for survival. Upgraded with next-gen in mind and featuring free additional content, customize your character and playstyle as you take on jobs, build a reputation, and unlock upgrades.",
-  systemRequirements: {
-    windows: {
-      minimum: {
-        os: "Windows 10 64-bit",
-        processor: "Core i7-6700 or Ryzen 5 1600",
-        memory: "12 GB RAM",
-        graphics: "GeForce GTX 1060 6GB",
-        storage: "70 GB SSD",
-      },
-      recommended: {
-        os: "Windows 10 64-bit",
-        processor: "Core i7-12700 or Ryzen 7 7800X3D",
-        memory: "16 GB RAM",
-        graphics: "GeForce RTX 2060 SUPER",
-        storage: "70 GB SSD",
-      },
-    },
-  },
-  languages: [
-    { name: "English", interface: true, audio: true, subtitles: true },
-    { name: "French", interface: true, audio: true, subtitles: true },
-    { name: "German", interface: true, audio: true, subtitles: true },
-    { name: "Spanish - Spain", interface: true, audio: true, subtitles: true },
-    { name: "Japanese", interface: true, audio: true, subtitles: true },
-    { name: "Polish", interface: true, audio: true, subtitles: true },
-  ],
-  features: [
-    { name: "Single-player", icon: User },
-    { name: "Steam Achievements", icon: Trophy },
-    { name: "Full Controller Support", icon: Gamepad2 },
-    { name: "Cloud Saves", icon: Cloud },
-    { name: "Family Sharing", icon: Users2 },
-    { name: "HDR Available", icon: Monitor },
-    { name: "Accessibility Features", icon: Accessibility },
-  ],
-  criticReviews: [
-    { source: "IGN", score: "9/10", quote: "An open-world RPG of incredible detail and ambition." },
-    { source: "GameSpot", score: "7/10", quote: "A beautiful world, but with some rough edges." },
-    { source: "PC Gamer", score: "78/100", quote: "A stunning achievement in world-building." },
-  ],
-  reviews: [
-    {
-      id: 1,
-      author: "NightCityNinja",
-      avatar: "/placeholder.svg?height=40&width=40",
-      playtime: "125.3 hrs",
-      date: "Jun 28, 2025",
-      isRecommended: true,
-      content:
-        "After all the updates, this game is finally the masterpiece it was meant to be. The world is breathtaking, the stories are compelling, and Phantom Liberty is one of the best DLCs I've ever played. An absolute must-play.",
-      helpful: 1204,
-      unhelpful: 34,
-    },
-    {
-      id: 2,
-      author: "GlitchHunter",
-      avatar: "/placeholder.svg?height=40&width=40",
-      playtime: "22.1 hrs",
-      date: "Jun 25, 2025",
-      isRecommended: false,
-      content:
-        "It's better, for sure. But I still run into weird physics bugs and some quests feel a bit janky. The driving is still not great. It's a good game, but not the revolution we were promised. Wait for a deeper sale.",
-      helpful: 256,
-      unhelpful: 89,
-    },
-  ],
-  roadmap: {
-    inProgress: [
-      { id: 1, title: "Vehicle Combat Overhaul", progress: 65, votes: 12400 },
-      { id: 2, title: "New Radio Stations", progress: 80, votes: 8900 },
-    ],
-    planned: [
-      { id: 3, title: "Apartment Customization Expansion", votes: 25600 },
-      { id: 4, title: "More Cyberware Options", votes: 19800 },
-    ],
-    completed: [
-      { id: 5, title: "Update 2.1 & Metro System" },
-      { id: 6, title: "Phantom Liberty Expansion" },
-    ],
-  },
-  communityPosts: [
-    {
-      id: 1,
-      type: "dev",
-      author: "CD PROJEKT RED",
-      avatar: "/placeholder.svg?height=40&width=40",
-      time: "3h ago",
-      content:
-        "Patch 2.11 is now live! Check out the full patch notes on our website. We're excited to see your new adventures in Night City!",
-      icon: Newspaper,
-    },
-    {
-      id: 2,
-      type: "user",
-      author: "V_for_Vengeance",
-      avatar: "/placeholder.svg?height=40&width=40",
-      time: "5h ago",
-      content: "Just captured this stunning view from my apartment in Japantown. This game is a work of art.",
-      image: "/cyberpunk-street.png",
-      icon: ImageIcon,
-    },
-  ],
-}
+	title: "Cyberpunk 2077",
+	trailerUrl: "https://cdn.v0.dev/videos/cyberpunk_trailer.mp4",
+	heroImage: "https://images.unsplash.com/photo-1581333107593-daoshi490970a2?q=80&w=1920&auto=format&fit=crop",
+	boxArt: "https://images.unsplash.com/photo-1581333107593-daoshi490970a2?q=80&w=200&auto=format&fit=crop",
+	developer: "CD PROJEKT RED",
+	publisher: "CD PROJEKT RED",
+	releaseDate: "Dec 10, 2020",
+	tags: ["RPG", "Open World", "Cyberpunk", "Action", "Futuristic", "Sci-fi"],
+	shortDescription: "An open-world, action-adventure RPG set in Night City, a megalopolis obsessed with power, glamour and body modification.",
+	reviewSummary: {
+		recent: "Mostly Positive",
+		recentCount: 8754,
+		overall: "Very Positive",
+		overallCount: 589340,
+	},
+	media: [
+		{ type: "video", url: "https://cdn.v0.dev/videos/cyberpunk_trailer.mp4", thumb: "https://images.unsplash.com/photo-1581333107593-daoshi490970a2?q=80&w=400&auto=format&fit=crop" },
+		{ type: "image", url: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=1280&auto=format&fit=crop" },
+		{ type: "image", url: "https://images.unsplash.com/photo-1550745165-9bc0b252726a?q=80&w=1280&auto=format&fit=crop" },
+		{ type: "image", url: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1280&auto=format&fit=crop" },
+		{ type: "image", url: "https://images.unsplash.com/photo-1593411342535-395893a7a4a8?q=80&w=1280&auto=format&fit=crop" },
+	],
+	editions: [
+		{
+			name: "Standard Edition",
+			price: 29.99,
+			originalPrice: 59.99,
+			discount: 50,
+			description: "The base game, upgraded for the next generation.",
+		},
+		{
+			name: "Ultimate Edition",
+			price: 49.99,
+			originalPrice: 89.98,
+			discount: 44,
+			description: "Includes the base game and the Phantom Liberty expansion.",
+		},
+	],
+	dlcs: [
+		{
+			name: "Phantom Liberty",
+			price: 29.99,
+			image: "https://images.unsplash.com/photo-1627920453477-9a00ab3e0839?q=80&w=400&auto=format&fit=crop",
+			description: "A new spy-thriller adventure.",
+		},
+	],
+	about: "Cyberpunk 2077 is an open-world, action-adventure RPG set in the megalopolis of Night City, where you play as a cyberpunk mercenary wrapped up in a do-or-die fight for survival. Upgraded with next-gen in mind and featuring free additional content, customize your character and playstyle as you take on jobs, build a reputation, and unlock upgrades.",
+	systemRequirements: {
+		windows: {
+			minimum: {
+				os: "Windows 10 64-bit",
+				processor: "Core i7-6700 or Ryzen 5 1600",
+				memory: "12 GB RAM",
+				graphics: "GeForce GTX 1060 6GB",
+				storage: "70 GB SSD",
+			},
+			recommended: {
+				os: "Windows 10 64-bit",
+				processor: "Core i7-12700 or Ryzen 7 7800X3D",
+				memory: "16 GB RAM",
+				graphics: "GeForce RTX 2060 SUPER",
+				storage: "70 GB SSD",
+			},
+		},
+	},
+	languages: [
+		{ name: "English", interface: true, audio: true, subtitles: true },
+		{ name: "French", interface: true, audio: true, subtitles: true },
+		{ name: "German", interface: true, audio: true, subtitles: true },
+		{ name: "Spanish - Spain", interface: true, audio: true, subtitles: true },
+		{ name: "Japanese", interface: true, audio: true, subtitles: true },
+		{ name: "Polish", interface: true, audio: true, subtitles: true },
+	],
+	features: [
+		{ name: "Single-player", icon: User },
+		{ name: "Steam Achievements", icon: Trophy },
+		{ name: "Full Controller Support", icon: Gamepad2 },
+		{ name: "Cloud Saves", icon: Cloud },
+		{ name: "Family Sharing", icon: Users2 },
+		{ name: "HDR Available", icon: Monitor },
+		{ name: "Accessibility Features", icon: Accessibility },
+	],
+	criticReviews: [
+		{ source: "IGN", score: "9/10", quote: "An open-world RPG of incredible detail and ambition." },
+		{ source: "GameSpot", score: "7/10", quote: "A beautiful world, but with some rough edges." },
+		{ source: "PC Gamer", score: "78/100", quote: "A stunning achievement in world-building." },
+	],
+	reviews: [
+		{
+			id: 1,
+			author: "NightCityNinja",
+			avatar: "https://i.pravatar.cc/40?u=NightCityNinja",
+			playtime: "125.3 hrs",
+			date: "Jun 28, 2025",
+			isRecommended: true,
+			content: "After all the updates, this game is finally the masterpiece it was meant to be. The world is breathtaking, the stories are compelling, and Phantom Liberty is one of the best DLCs I've ever played. An absolute must-play.",
+			helpful: 1204,
+			unhelpful: 34,
+		},
+		{
+			id: 2,
+			author: "GlitchHunter",
+			avatar: "https://i.pravatar.cc/40?u=GlitchHunter",
+			playtime: "22.1 hrs",
+			date: "Jun 25, 2025",
+			isRecommended: false,
+			content: "It's better, for sure. But I still run into weird physics bugs and some quests feel a bit janky. The driving is still not great. It's a good game, but not the revolution we were promised. Wait for a deeper sale.",
+			helpful: 256,
+			unhelpful: 89,
+		},
+	],
+	roadmap: {
+		inProgress: [
+			{ id: 1, title: "Vehicle Combat Overhaul", progress: 65, votes: 12400 },
+			{ id: 2, title: "New Radio Stations", progress: 80, votes: 8900 },
+		],
+		planned: [
+			{ id: 3, title: "Apartment Customization Expansion", votes: 25600 },
+			{ id: 4, title: "More Cyberware Options", votes: 19800 },
+		],
+		completed: [
+			{ id: 5, title: "Update 2.1 & Metro System" },
+			{ id: 6, title: "Phantom Liberty Expansion" },
+		],
+	},
+	communityPosts: [
+		{
+			id: 1,
+			type: "dev",
+			author: "CD PROJEKT RED",
+			avatar: "https://i.pravatar.cc/40?u=CDPROJEKTRED",
+			time: "3h ago",
+			content: "Patch 2.11 is now live! Check out the full patch notes on our website. We're excited to see your new adventures in Night City!",
+			icon: Newspaper,
+		},
+		{
+			id: 2,
+			type: "user",
+			author: "V_for_Vengeance",
+			avatar: "https://i.pravatar.cc/40?u=V_for_Vengeance",
+			time: "5h ago",
+			content: "Just captured this stunning view from my apartment in Japantown. This game is a work of art.",
+			image: "https://images.unsplash.com/photo-1581333107593-daoshi490970a2?q=80&w=400&auto=format&fit=crop",
+			icon: ImageIcon,
+		},
+	],
+};
 
 export function GameDetailPage({ onBack }: GameDetailPageProps) {
   const [game] = useState(cyberpunkGameData)

@@ -1,46 +1,113 @@
-:root {
-  --background: 0 0% 100%;
-  --foreground: 0 0% 3.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 3.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 3.9%;
-  --primary: 0 0% 9%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 0 0% 96.1%;
-  --secondary-foreground: 0 0% 9%;
-  --muted: 0 0% 96.1%;
-  --muted-foreground: 0 0% 45.1%;
-  --accent: 0 0% 96.1%;
-  --accent-foreground: 0 0% 9%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 0 0% 89.8%;
-  --input: 0 0% 89.8%;
-  --ring: 0 0% 3.9%;
-  --radius: 0.75rem;
-}
+@import "tailwindcss";
 
+:root,
 .dark {
-  --background: 0 0% 2%;
-  --foreground: 0 0% 98%;
-  --card: 0 0% 4%;
-  --card-foreground: 0 0% 98%;
+  /* Oxide Design System Colors - Desktop Native */
+    --background: 0 0% 4%;
+    /* Deep Charcoal */
+    --foreground: 0 0% 95%;
+    /* Soft White */
+  
+    --card: 0 0% 7%;
+    /* Graphite Grey */
+    --card-foreground: 0 0% 95%;
   --popover: 0 0% 4%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 0 0% 98%;
-  --primary-foreground: 0 0% 9%;
-  --secondary: 0 0% 8%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 0 0% 8%;
-  --muted-foreground: 0 0% 65%;
-  --accent: 0 0% 8%;
-  --accent-foreground: 0 0% 98%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 0 0% 12%;
-  --input: 0 0% 12%;
-  --ring: 0 0% 83.1%;
+  --popover-foreground: 0 0% 95%;
+  
+    --primary: 168 100% 50%;
+    /* Electric Teal */
+    --primary-foreground: 0 0% 4%;
+  
+    --secondary: 0 0% 11%;
+    /* Gunmetal */
+    --secondary-foreground: 0 0% 95%;
+  
+    --muted: 0 0% 11%;
+    --muted-foreground: 0 0% 65%;
+    /* Muted Grey */
+  
+    --accent: 0 0% 11%;
+    --accent-foreground: 0 0% 95%;
+  
+    --destructive: 0 100% 59%;
+    /* Neon Red */
+    --destructive-foreground: 0 0% 95%;
+  
+    --border: 0 0% 15%;
+    /* Stealth Grey */
+    --input: 0 0% 15%;
+    --ring: 168 100% 50%;
+    --radius: 0.5rem;
+    /* Smaller radius for native feel */
+  
+    /* Oxide Brand Colors */
+    --electric-teal: 168 100% 50%;
+    --deep-charcoal: 0 0% 4%;
+    --graphite-grey: 0 0% 7%;
+    --gunmetal: 0 0% 11%;
+    --soft-white: 0 0% 95%;
+    --muted-grey: 0 0% 65%;
+    --neon-red: 0 100% 59%;
+    --bright-lime: 80 100% 50%;
+    --stealth-grey: 0 0% 15%;
+  }
+  
+  * {
+    border-color: hsl(var(--border));
+  }
+  
+  body {
+    color: hsl(var(--foreground));
+    background: hsl(var(--background));
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    /* Native app feel */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+    /* Prevent text selection for native feel */
+  }
+  
+  /* Font Family Classes */
+  .font-oxanium {
+    font-family: var(--font-oxanium), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+  
+  .font-roboto-condensed {
+    font-family: var(--font-roboto-condensed), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  }
+  
+  .font-jetbrains-mono {
+    font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  }
+  
+  /* Native scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent));
+  }
+  
+  /* Hide scrollbars but keep functionality for specific elements */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 @tailwind base;
@@ -49,37 +116,85 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#0A0A0A] text-[#F2F2F2];
   }
 }
 
 @layer components {
-  .game-card {
-    @apply bg-gray-950/50 border border-gray-800/50 rounded-lg overflow-hidden backdrop-blur-sm transition-all duration-200 hover:border-rust-500/50 hover:bg-gray-900/50;
+  /* Native Desktop Components */
+    .native-window {
+      @apply bg-[#0A0A0A] border border-[#1C1C1C] rounded-none shadow-none;
+    }
+  
+    .native-panel {
+      @apply bg-[#1C1C1C] border border-[#2B2B2B] rounded-sm;
+    }
+  
+    .native-button {
+      @apply bg-[#2B2B2B] hover:bg-[#3D3D3D] text-[#F2F2F2] border border-[#2B2B2B] hover:border-[#00FFC6]/30 px-3 py-2 rounded-sm transition-all duration-150 font-medium text-sm;
+    }
+  
+    .native-button-primary {
+      @apply bg-[#00FFC6] hover:bg-[#00FFC6]/90 text-[#0A0A0A] border border-[#00FFC6] px-3 py-2 rounded-sm transition-all duration-150 font-medium text-sm;
+    }
+  
+    .native-input {
+      @apply bg-[#1C1C1C] border border-[#2B2B2B] text-[#F2F2F2] placeholder-[#AAAAAA] px-3 py-2 rounded-sm focus:border-[#00FFC6] focus:outline-none transition-colors duration-150;
+    }
+  
+    .native-card {
+      @apply bg-[#1C1C1C] border border-[#2B2B2B] rounded-sm hover:border-[#00FFC6]/30 transition-all duration-200;
+    }
+  
+    .native-sidebar {
+      @apply bg-[#0A0A0A] border-r border-[#2B2B2B] w-64;
+    }
+  
+    .native-header {
+      @apply bg-[#1C1C1C] border-b border-[#2B2B2B] h-12 flex items-center px-4;
+    }
+  
+    .native-toolbar {
+      @apply bg-[#1C1C1C] border-b border-[#2B2B2B] h-10 flex items-center px-3 gap-2;
+    }
+  
+    .native-status-bar {
+      @apply bg-[#0A0A0A] border-t border-[#2B2B2B] h-6 flex items-center px-3 text-xs text-[#AAAAAA];
+    }
+  
+    /* Game Cards for Desktop */
+    .game-card-native {
+      @apply bg-[#1C1C1C] border border-[#2B2B2B] rounded-sm overflow-hidden hover:border-[#00FFC6]/30 hover:bg-[#2B2B2B] transition-all duration-200;
+    }
+  
+    .game-card-native-interactive {
+      @apply game-card-native hover:scale-[1.02] hover:shadow-lg hover:shadow-[#00FFC6]/10 cursor-pointer;
   }
 
-  .game-card-interactive {
-    @apply game-card hover:scale-[1.02] hover:shadow-lg hover:shadow-rust-500/10;
+    /* Oxide Brand Components */
+    .oxide-badge {
+      @apply bg-[#00FFC6]/10 text-[#00FFC6] border border-[#00FFC6]/20 px-2 py-1 rounded-sm text-xs font-medium;
   }
 
-  .btn-primary {
-    @apply bg-rust-500 hover:bg-rust-600 text-white font-medium px-4 py-2 rounded-md transition-colors duration-200;
+    .oxide-glow {
+      box-shadow: 0 0 20px rgba(0, 255, 198, 0.2);
   }
 
-  .ai-badge {
-    @apply bg-rust-500/10 text-rust-400 border border-rust-500/20 px-2 py-1 rounded-md text-xs font-medium;
+    .oxide-glow-strong {
+      box-shadow: 0 0 30px rgba(0, 255, 198, 0.4);
   }
 
-  .section-spacing {
-    @apply py-16 lg:py-24;
+    /* Native Layout Spacing */
+    .native-spacing {
+      @apply space-y-4;
   }
 
-  .content-spacing {
-    @apply space-y-8 lg:space-y-12;
+    .native-padding {
+      @apply p-4;
   }
 
-  .container-padding {
-    @apply px-4 sm:px-6 lg:px-8;
+    .native-margin {
+      @apply m-4;
   }
 }
 
@@ -88,11 +203,20 @@
     text-wrap: balance;
   }
 
-  .rust-glow {
-    box-shadow: 0 0 20px rgba(205, 127, 50, 0.3);
+    /* Native app utilities */
+    .native-drag {
+      -webkit-app-region: drag;
   }
 
-  .rust-glow-strong {
-    box-shadow: 0 0 30px rgba(205, 127, 50, 0.5);
+    .native-no-drag {
+      -webkit-app-region: no-drag;
+    }
+  
+    .native-select {
+      user-select: text;
+    }
+  
+    .native-focus {
+      @apply focus:outline-none focus:ring-2 focus:ring-[#00FFC6] focus:ring-offset-2 focus:ring-offset-[#0A0A0A];
   }
 }

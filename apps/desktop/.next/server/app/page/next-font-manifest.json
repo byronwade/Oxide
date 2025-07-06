@@ -2,7 +2,10 @@
   "pages": {},
   "app": {
     "[project]/apps/desktop/app/page": [
-      "static/media/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw-s.p.0faac26c.woff2"
+      "static/media/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw-s.p.0faac26c.woff2",
+      "static/media/tDbV2o_flEEny0FZhsfKu5WU4xD7OwGtT0rU-s.p.f260072f.woff2",
+      "static/media/RrQQboN_4yJ0JmiMe2LE0ZJCZ4c-s.p.a64b1a36.woff2",
+      "static/media/ieVl2ZhZI2eCN5jzbjEETS9weq8_19K7DQk6YvM-s.p.0b486f2d.woff2"
     ]
   },
   "appUsingSizeAdjust": true,

@@ -1,38 +1,45 @@
-import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata } from "next";
+import { Inter, Oxanium, Roboto_Condensed, JetBrains_Mono } from "next/font/google";
 import "../globals.css";
-import "./desktop.css";
-import { CustomTitleBar } from "@/components/layout/CustomTitleBar";
+import DesktopLayout from "../components/DesktopLayout";
 
-const inter = Inter({
-	subsets: ["latin"],
-	variable: "--font-sans",
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const oxanium = Oxanium({ subsets: ["latin"], variable: "--font-oxanium" });
+const robotoCondensed = Roboto_Condensed({ subsets: ["latin"], variable: "--font-roboto-condensed" });
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono" });
 
 export const metadata: Metadata = {
 	title: "Oxide Desktop",
-	description: "The official Oxide desktop app.",
-	keywords: ["game launcher", "indie games", "steam alternative", "DRM-free games"],
-	authors: [{ name: "The Oxide Team" }],
-	creator: "The Oxide Team",
-	publisher: "The Oxide Team",
-	robots: {
-		index: false,
-		follow: false,
-	},
+	description: "The ultimate gaming platform for PC",
 };
 
-export const viewport: Viewport = {
-	width: "device-width",
-	initialScale: 1,
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+	children,
+}: Readonly<{
+	children: React.ReactNode;
+}>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
-			<body className={`font-sans ${inter.variable} bg-transparent`}>
-				<CustomTitleBar />
-				{children}
+		<html lang="en" suppressHydrationWarning className="dark">
+			<head>
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<link rel="icon" href="/favicon.ico" />
+			</head>
+			<body className={`${inter.variable} ${oxanium.variable} ${robotoCondensed.variable} ${jetbrainsMono.variable} font-sans antialiased min-h-screen bg-dark-bg text-text-primary selection:bg-xbox-green/20`} suppressHydrationWarning>
+				<DesktopLayout>{children}</DesktopLayout>
+				{/* <PerformanceDashboard /> */}
+
+				{/* Performance Monitor Initialization */}
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `
+							// Initialize performance monitoring
+							if (typeof window !== 'undefined') {
+								console.log('🔧 Desktop Performance Monitor: Initialized');
+								// Performance monitoring will be handled by the desktop performance monitor
+							}
+						`,
+					}}
+				/>
 			</body>
 		</html>
 	);

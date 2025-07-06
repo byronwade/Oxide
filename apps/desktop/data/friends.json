@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "username": "Vex",
+    "profile": {
+      "avatar": "https://i.pravatar.cc/40?u=Vex"
+    },
+    "status": "online",
+    "playing": "Cyberpunk 2077"
+  },
+  {
+    "id": "2",
+    "username": "Nyx",
+    "profile": {
+      "avatar": "https://i.pravatar.cc/40?u=Nyx"
+    },
+    "status": "online",
+    "playing": "Baldur's Gate 3"
+  },
+  {
+    "id": "3",
+    "username": "Raze",
+    "profile": {
+      "avatar": "https://i.pravatar.cc/40?u=Raze"
+    },
+    "status": "away",
+    "playing": ""
+  },
+  {
+    "id": "4",
+    "username": "Echo",
+    "profile": {
+      "avatar": "https://i.pravatar.cc/40?u=Echo"
+    },
+    "status": "offline",
+    "playing": ""
+  },
+  {
+    "id": "5",
+    "username": "Jett",
+    "profile": {
+      "avatar": "https://i.pravatar.cc/40?u=Jett"
+    },
+    "status": "online",
+    "playing": "Valorant"
+  }
+]

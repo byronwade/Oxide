@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "friendId": "1",
+    "messages": [
+      {
+        "id": "m1",
+        "senderId": "1",
+        "content": "Hey, you up for some Cyberpunk later?",
+        "timestamp": "2024-07-29T10:00:00Z"
+      },
+      {
+        "id": "m2",
+        "senderId": "me",
+        "content": "Yeah, absolutely! I'm free in an hour.",
+        "timestamp": "2024-07-29T10:01:00Z"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "friendId": "2",
+    "messages": [
+      {
+        "id": "m3",
+        "senderId": "2",
+        "content": "That last boss in Baldur's Gate was insane!",
+        "timestamp": "2024-07-29T11:30:00Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,5 @@
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#FF6B35"/>
+  <text x="50%" y="40%" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="white" opacity="0.9">🍕</text>
+  <text x="50%" y="70%" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white" opacity="0.8"></text>
+</svg>

@@ -34,7 +34,7 @@ var { g: global, __dirname } = __turbopack_context__;
 });
 const __TURBOPACK__default__export__ = {
     plugins: {
-        "@tailwindcss/postcss": {},
+        tailwindcss: {},
         autoprefixer: {}
     }
 };

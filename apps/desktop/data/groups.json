@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "name": "Cyberpunk Crew",
+    "members": [
+      "1",
+      "5",
+      "me"
+    ],
+    "messages": [
+      {
+        "id": "g1",
+        "senderId": "1",
+        "content": "Let's get that new cyberware tonight.",
+        "timestamp": "2024-07-29T12:00:00Z"
+      },
+      {
+        "id": "g2",
+        "senderId": "5",
+        "content": "I'm in! I'll be on around 8.",
+        "timestamp": "2024-07-29T12:05:00Z"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "RPG Fans",
+    "members": [
+      "2",
+      "3",
+      "me"
+    ],
+    "messages": []
+  }
+]

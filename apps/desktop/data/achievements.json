@@ -1,0 +1,277 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-12-29T10:00:00Z",
+    "totalCount": 250,
+    "apiVersion": "v2",
+    "cacheExpiry": 600
+  },
+  "data": [
+    {
+      "id": "ach_001",
+      "gameId": "game_001",
+      "title": "First Steps",
+      "description": "Take your first steps into Crow Country",
+      "type": "story",
+      "difficulty": "easy",
+      "category": "progression",
+      "iconUrl": "/images/achievements/achievement-1.svg",
+      "points": 10,
+      "rarity": 85.2,
+      "requirements": {
+        "type": "event",
+        "conditions": {
+          "event": "game_started"
+        }
+      },
+      "rewards": {
+        "xp": 100,
+        "badge": "bronze",
+        "socialShareText": "Just started exploring the mysterious Crow Country! 🐦"
+      },
+      "isHidden": false,
+      "unlockRate": 85.2,
+      "createdAt": "2024-05-15T00:00:00Z"
+    },
+    {
+      "id": "ach_002",
+      "gameId": "game_001",
+      "title": "Puzzle Master",
+      "description": "Solve 10 puzzles without using hints",
+      "type": "challenge",
+      "difficulty": "medium",
+      "category": "skill",
+      "iconUrl": "/images/achievements/achievement-2.svg",
+      "points": 25,
+      "rarity": 34.7,
+      "requirements": {
+        "type": "stat",
+        "conditions": {
+          "puzzles_solved_no_hints": 10
+        }
+      },
+      "rewards": {
+        "xp": 250,
+        "badge": "silver",
+        "title": "Puzzle Solver",
+        "socialShareText": "Mastered 10 puzzles without any hints! 🧩"
+      },
+      "isHidden": false,
+      "unlockRate": 34.7,
+      "createdAt": "2024-05-15T00:00:00Z"
+    },
+    {
+      "id": "ach_003",
+      "gameId": "game_002",
+      "title": "Checkmate Rookie",
+      "description": "Win your first game as the Shotgun King",
+      "type": "story",
+      "difficulty": "easy",
+      "category": "progression",
+      "iconUrl": "/images/achievements/achievement-3.svg",
+      "points": 15,
+      "rarity": 78.9,
+      "requirements": {
+        "type": "event",
+        "conditions": {
+          "first_victory": true
+        }
+      },
+      "rewards": {
+        "xp": 150,
+        "badge": "bronze",
+        "socialShareText": "First victory as the Shotgun King! ♔💥"
+      },
+      "isHidden": false,
+      "unlockRate": 78.9,
+      "createdAt": "2022-03-12T00:00:00Z"
+    },
+    {
+      "id": "ach_004",
+      "gameId": "game_002",
+      "title": "Legendary King",
+      "description": "Defeat 100 white pieces in a single run",
+      "type": "challenge",
+      "difficulty": "legendary",
+      "category": "combat",
+      "iconUrl": "/images/achievements/achievement-4.svg",
+      "points": 100,
+      "rarity": 2.3,
+      "requirements": {
+        "type": "stat",
+        "conditions": {
+          "pieces_defeated_single_run": 100
+        }
+      },
+      "rewards": {
+        "xp": 1000,
+        "badge": "legendary",
+        "title": "Shotgun Legend",
+        "socialShareText": "Defeated 100 pieces in a single run! I am the Shotgun King! 👑"
+      },
+      "isHidden": false,
+      "unlockRate": 2.3,
+      "createdAt": "2022-03-12T00:00:00Z"
+    },
+    {
+      "id": "ach_005",
+      "gameId": "game_003",
+      "title": "Terry's Fan",
+      "description": "Play all experimental games in the collection",
+      "type": "collection",
+      "difficulty": "medium",
+      "category": "exploration",
+      "iconUrl": "/images/achievements/achievement-5.svg",
+      "points": 30,
+      "rarity": 45.6,
+      "requirements": {
+        "type": "stat",
+        "conditions": {
+          "games_completed": 5
+        }
+      },
+      "rewards": {
+        "xp": 300,
+        "badge": "silver",
+        "title": "Experimental Player",
+        "socialShareText": "Completed all experimental games by Terry Cavanagh! 🎮"
+      },
+      "isHidden": false,
+      "unlockRate": 45.6,
+      "createdAt": "2023-08-20T00:00:00Z"
+    },
+    {
+      "id": "ach_006",
+      "gameId": "game_008",
+      "title": "Mountain Climber",
+      "description": "Reach the summit of Celeste Mountain",
+      "type": "story",
+      "difficulty": "hard",
+      "category": "progression",
+      "iconUrl": "/images/achievements/achievement-6.svg",
+      "points": 50,
+      "rarity": 12.8,
+      "requirements": {
+        "type": "event",
+        "conditions": {
+          "summit_reached": true
+        }
+      },
+      "rewards": {
+        "xp": 500,
+        "badge": "gold",
+        "title": "Summit Conqueror",
+        "socialShareText": "Reached the summit of Celeste Mountain! 🏔️"
+      },
+      "isHidden": false,
+      "unlockRate": 12.8,
+      "createdAt": "2018-01-25T00:00:00Z"
+    },
+    {
+      "id": "ach_007",
+      "gameId": "game_008",
+      "title": "Strawberry Hunter",
+      "description": "Collect 100 strawberries",
+      "type": "collection",
+      "difficulty": "medium",
+      "category": "collection",
+      "iconUrl": "/images/achievements/achievement-7.svg",
+      "points": 25,
+      "rarity": 23.4,
+      "requirements": {
+        "type": "stat",
+        "conditions": {
+          "strawberries_collected": 100
+        }
+      },
+      "rewards": {
+        "xp": 250,
+        "badge": "silver",
+        "socialShareText": "Collected 100 strawberries in Celeste! 🍓"
+      },
+      "isHidden": false,
+      "unlockRate": 23.4,
+      "createdAt": "2018-01-25T00:00:00Z"
+    },
+    {
+      "id": "ach_008",
+      "gameId": "game_009",
+      "title": "Escape Artist",
+      "description": "Successfully escape from the Underworld",
+      "type": "story",
+      "difficulty": "medium",
+      "category": "progression",
+      "iconUrl": "/images/achievements/achievement-8.svg",
+      "points": 30,
+      "rarity": 67.3,
+      "requirements": {
+        "type": "event",
+        "conditions": {
+          "first_escape": true
+        }
+      },
+      "rewards": {
+        "xp": 300,
+        "badge": "bronze",
+        "socialShareText": "Escaped the Underworld in Hades! ⚡"
+      },
+      "isHidden": false,
+      "unlockRate": 67.3,
+      "createdAt": "2020-09-17T00:00:00Z"
+    },
+    {
+      "id": "ach_009",
+      "gameId": "game_009",
+      "title": "God of Speed",
+      "description": "Complete a run in under 20 minutes",
+      "type": "challenge",
+      "difficulty": "legendary",
+      "category": "speed",
+      "iconUrl": "/images/achievements/achievement-9.svg",
+      "points": 100,
+      "rarity": 1.2,
+      "requirements": {
+        "type": "stat",
+        "conditions": {
+          "completion_time_minutes": 20,
+          "operator": "less_than"
+        }
+      },
+      "rewards": {
+        "xp": 1000,
+        "badge": "legendary",
+        "title": "Speedrun Master",
+        "socialShareText": "Completed Hades in under 20 minutes! ⚡⚡⚡"
+      },
+      "isHidden": false,
+      "unlockRate": 1.2,
+      "createdAt": "2020-09-17T00:00:00Z"
+    },
+    {
+      "id": "ach_010",
+      "gameId": "game_010",
+      "title": "Detective",
+      "description": "Solve your first case in Revachol",
+      "type": "story",
+      "difficulty": "easy",
+      "category": "progression",
+      "iconUrl": "/images/achievements/achievement-10.svg",
+      "points": 20,
+      "rarity": 89.4,
+      "requirements": {
+        "type": "event",
+        "conditions": {
+          "first_case_solved": true
+        }
+      },
+      "rewards": {
+        "xp": 200,
+        "badge": "bronze",
+        "socialShareText": "Solved my first case in Disco Elysium! 🕵️"
+      },
+      "isHidden": false,
+      "unlockRate": 89.4,
+      "createdAt": "2019-10-15T00:00:00Z"
+    }
+  ]
+}
